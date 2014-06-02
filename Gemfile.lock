@@ -77,6 +77,8 @@ GEM
     foundation-rails (5.2.2.0)
       railties (>= 3.1.0)
       sass (>= 3.2.0)
+    friendly_id (5.0.4)
+      activerecord (>= 4.0.0)
     geocoder (1.2.1)
     haml (4.0.5)
       tilt
@@ -184,6 +186,7 @@ DEPENDENCIES
   devise
   formtastic!
   foundation-rails
+  friendly_id (~> 5.0.0)
   geocoder
   haml
   inherited_resources!
