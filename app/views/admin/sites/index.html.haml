@@ -1,0 +1,26 @@
+.row
+  .small-12.columns
+    %h2 Sites / partners
+.row
+  .small-12.columns
+    %table
+      %thead
+        %th ID
+        %th Name 
+        %th Location
+        %th Active?
+        %th Actions
+      %tbody
+        - @sites.each do |site|
+          %tr
+            %td= site.id.to_s
+            %td= site.name
+            %td= site.full_street_address
+            %td= site.current == true ? 'yes' : 'no'
+            %td.actions
+              = link_to 'Edit', edit_admin_site_path(site), :class => [:button, :round, :tiny]
+              = link_to 'Delete', [:admin, site], :method => :delete, :class => [:button, :round, :tiny, :warning]
+.row
+  .small-12.columns= link_to 'New site', new_admin_site_path, :class => [:button, :round]
+          
+          

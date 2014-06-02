@@ -1,0 +1,46 @@
+!!!
+%html{:lang => "en"}
+  %head
+    %meta{:charset => "utf-8"}/
+    %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/
+    %title= content_for?(:title) ? yield(:title) : "Frontiers in Retreat" 
+    = stylesheet_link_tag  "application" 
+    = javascript_include_tag "vendor/modernizr" 
+    %script{:src => "https://maps.googleapis.com/maps/api/js?key=AIzaSyAFlkw7SUgPOTDy8XkWVo_kszw20I22d4g&sensor=false", :type => "text/javascript"}
+    %script{:src => "http://google-maps-utility-library-v3.googlecode.com/svn/trunk/infobox/src/infobox.js", :type => "text/javascript"}
+    = csrf_meta_tags 
+  %body
+    #frontiers_header
+      .letter F
+      .letter R
+      .letter O
+      .letter N
+      .letter T
+      .letter I
+      .letter E
+      .letter R
+      .letter S
+    #inretreat_header
+      .letter_in IN
+      .letter R
+      .letter E
+      .letter T
+      .letter R
+      .letter E
+      .letter A
+      .letter T
+    #main_menu
+      %ul
+        %li= link_to 'News', '#'
+        %li= link_to 'About', '#'
+        %li= link_to 'Organisers', '#'
+        %li= link_to 'Artists', '#'
+        %li= link_to 'Projects', '#'        
+        %li= link_to 'Archive', '#'
+        %li= link_to 'Glossary', '#'
+    #map_canvas
+                  
+      
+    = yield 
+    = javascript_include_tag "application" 
+    = render :partial => 'application/google_map'

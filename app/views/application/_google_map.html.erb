@@ -1,0 +1,137 @@
+<script type="text/javascript">
+  $(document).ready(function() {
+
+    function initialize() {
+      var darkStyle = [ 
+      {featureType: "water",
+      elementType: "all",
+      stylers: [
+      { color: "#0099ff" },
+      { lightness: 18}]}
+      ,
+      {featureType: "administrative",
+      elementType: "labels",
+      stylers: [      
+      { hue: "#1100ff" },
+      { saturation: -100 },
+      { lightness: -18 }]}
+      ,
+      {featureType: "poi",
+      elementType: "all",
+      stylers: [
+      { lightness: -18 },
+      { visibility: "off" }]}
+      ,
+      {featureType: "landscape",
+      elementType: "all",
+      stylers: [
+      { visibility: "on" }]}
+      ,
+      {featureType: "water",
+      elementType: "labels",
+      stylers: [      
+      { lightness: -18 },
+      { visibility: "off" }]}
+      ,
+      {featureType: "road",
+      elementType: "labels",
+      stylers: [
+      { hue: "#ffa200" },
+      { visibility: "on" }]}
+      ,
+      {featureType: "administrative",
+      elementType: "geometry",
+      stylers: [
+      { visibility: "simplified" }]}
+      ,
+      {featureType: "road.highway",
+      elementType: "geometry",
+      stylers: [
+      { saturation: -100 }]}
+      ,
+      {featureType: "road.arterial",
+      elementType: "geometry",
+      stylers: [
+      { saturation: -100 }]}
+      ,
+      {featureType: "road.local",
+      elementType: "geometry",
+      stylers: [
+      { lightness: -27 }]}
+      ,
+      {featureType: "transit",
+      elementType: "all",
+      stylers: [
+      { visibility: "off" }]}
+      ];
+      
+        var latlng = new google.maps.LatLng(59.436660, 24.737386);
+        
+  
+        
+      var mapLocations = $('#map_locations');
+      var  gBox, baseImage, points = [];
+      
+      $.each(mapLocations.find('ul.locations li'), function(i, el) {
+        points.push({
+          loc: $(el).find('a').text(),
+          lat: $(el).find('.lat').text(),
+          lng: $(el).find('.lng').text(),
+          href: $(el).find('a').attr('href')
+        });
+      });
+      gBox = new google.maps.LatLngBounds();
+      $.each(points, function(i, point) {
+        var latlng = new google.maps.LatLng(point.lat, point.lng);
+        gBox.extend(latlng);
+      });
+      
+      baseImage = {
+        url: "/assets/yellow_dot.png",
+        size: new google.maps.Size(16, 16),
+        anchor: new google.maps.Point(8, 8)
+      };
+
+      var myOptions = {
+          zoom: 6,
+          center:  gBox.getCenter(),
+          panControl: false,
+          mapTypeControl: false,
+          streetViewControl: false,
+          zoomControl: true,
+            zoomControlOptions: {
+              style: google.maps.ZoomControlStyle.SMALL,
+              position: google.maps.ControlPosition.BOTTOM_RIGHT
+            },
+          mapTypeId: 'darkwater'
+      };
+      var map = new google.maps.Map(document.getElementById("map_canvas"),
+                myOptions);
+        map.mapTypes.set('darkwater', new google.maps.StyledMapType(darkStyle, { name: 'Dark' }));
+      map.fitBounds(gBox);
+      // Add markers
+      $.each(points, function(i, point) {
+        var latlng,
+            marker,
+            markerOptions;
+
+
+        latlng = new google.maps.LatLng(point.lat, point.lng);
+        markerOptions = {
+          position: latlng,
+          map: map,
+          icon: baseImage
+        };
+
+        marker = new google.maps.Marker(markerOptions);
+      });
+            
+    }
+    google.maps.event.addDomListener(window, "load", initialize);
+    
+
+    
+  });
+
+  
+</script>

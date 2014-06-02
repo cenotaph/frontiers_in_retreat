@@ -1,0 +1,14 @@
+.row
+  .small-12.columns
+    = semantic_form_for [:admin, @page], :html => {:multipart => true} do |f|
+      .row
+        .small-6.columns= f.input :title
+      .row
+        .small-6.columns= f.input :body
+      .row
+        .small-6.columns= f.input :published
+      .row
+        .small-6.columns= f.submit 'Save', :class => [:button, :round]
+      
+          
+      
