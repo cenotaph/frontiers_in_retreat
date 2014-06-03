@@ -28,8 +28,8 @@ Rails.application.configure do
 
   # Do not fallback to assets pipeline if a precompiled asset is missed.
   config.assets.compile = true
-
-  # Generate digests for assets URLs.
+  config.action_mailer.default_url_options = { :host => 'frontiersinretreat.org' }
+  # Generate digests fo  config.action_mailer.default_url_options = { :host => 'localhost:3000' }r assets URLs.
   config.assets.digest = true
 
   # `config.assets.precompile` has moved to config/initializers/assets.rb
