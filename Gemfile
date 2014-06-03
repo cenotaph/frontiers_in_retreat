@@ -50,6 +50,7 @@ gem 'quiet_assets', group: :development
 
 gem 'country_select'
 gem 'devise'
+gem 'figaro'
 gem 'formtastic', branch: :master, github: 'justinfrench/formtastic'
 gem 'foundation-rails'
 gem 'friendly_id', '~> 5.0.0'
