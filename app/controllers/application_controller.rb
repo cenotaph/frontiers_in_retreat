@@ -9,6 +9,9 @@ class ApplicationController < ActionController::Base
     @sites = Site.current
   end
   
+  def static
+    render :layout => false
+  end
   protected
 
   def configure_permitted_parameters
