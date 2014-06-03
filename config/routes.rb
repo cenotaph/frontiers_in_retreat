@@ -5,9 +5,9 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   root 'application#home'
-  resources :pagesa
+  resources :pages
   resources :sites
-  
+  get '/front' => 'application#home'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
