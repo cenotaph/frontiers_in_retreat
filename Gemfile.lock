@@ -104,6 +104,9 @@ GEM
     jquery-ui-themes (0.0.11)
       httparty
     json (1.8.1)
+    kaminari (0.15.1)
+      actionpack (>= 3.0.0)
+      activesupport (>= 3.0.0)
     launchy (2.4.2)
       addressable (~> 2.3)
     letter_opener (1.2.0)
@@ -199,11 +202,13 @@ DEPENDENCIES
   friendly_id (~> 5.0.0)
   geocoder
   haml
+  has_scope
   inherited_resources!
   jbuilder (~> 2.0)
   jquery-rails
   jquery-ui-rails
   jquery-ui-themes
+  kaminari
   letter_opener
   pg
   quiet_assets
