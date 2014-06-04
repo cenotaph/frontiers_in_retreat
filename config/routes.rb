@@ -6,8 +6,10 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'application#static'
   resources :pages
+  resources :posts
   resources :sites
   get '/front' => 'application#home'
+  get '/admin' => 'admin/posts#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
@@ -54,6 +56,7 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :pages
+    resources :posts
     resources :sites
   end
   

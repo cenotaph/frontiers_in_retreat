@@ -45,3 +45,5 @@ config/secrets.yml
 # Ignore application configuration
 /config/application.yml
 /config/database.yml
+*.sql
+sync_db
