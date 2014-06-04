@@ -1,14 +1,13 @@
-class PostsController < InheritedResources::Base
-  has_scope :page, :default => 1
+class SitesController < InheritedResources::Base
   actions :index, :show
   
   def index
-    @posts = Post.published
+    @sites = Site.current
     render :layout => false
   end
   
   def show
-    @post = Post.published.find(params[:id])
+    @site = Site.current.find(params[:id])
     if request.xhr?
       render :layout => false
     end

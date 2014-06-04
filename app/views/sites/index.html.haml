@@ -1,0 +1,5 @@
+%h3 Sites
+
+%p 
+  Frontiers in Retreat is organised by
+  = link_to raw("&#x2192; ") + @sites.where(:lead => true).first.name, '#', :onclick => "siteDialog('#{sites_path}', 'sites'); return false;" 

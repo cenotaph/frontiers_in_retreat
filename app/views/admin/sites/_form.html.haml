@@ -22,6 +22,8 @@
       .row
         .small-6.columns= f.input :current
       .row
+        .small-6.columns= f.input :slug, :label => "Slug (override if necessary)"
+      .row
         .small-6.columns= f.submit 'Save', :class => [:button, :round]
       
           

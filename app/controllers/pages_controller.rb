@@ -1,4 +1,5 @@
 class PagesController < InheritedResources::Base
+  actions :show
   
   def show
     @page = Page.published.find(params[:id])

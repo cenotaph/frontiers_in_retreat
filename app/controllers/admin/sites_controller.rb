@@ -11,7 +11,7 @@ class Admin::SitesController < Admin::BaseController
   protected
   
   def site_params
-    params.require(:site).permit(:name, :city, :country, :lead, :address, :description, :latitude, :longitude, :current)
+    params.require(:site).permit(:name, :city, :country, :lead, :slug, :address, :description, :latitude, :longitude, :current)
   end
   
 end
