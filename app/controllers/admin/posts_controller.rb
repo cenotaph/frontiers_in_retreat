@@ -1,5 +1,5 @@
 class Admin::PostsController < Admin::BaseController
-
+  
   def create
     create! { admin_posts_path }
   end

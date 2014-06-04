@@ -14,6 +14,7 @@
  *= require jquery.ui.core
  *= require jquery.ui.theme
  *= require jquery.ui.dialog
+ *= require hiap
  */
 html { height: 100% }
 body { height: 100%; margin: 0; padding: 0 }
@@ -102,57 +103,5 @@ body { height: 100%; margin: 0; padding: 0 }
 
 ul.locations {
   display: none;
-}
-
-/* jquery-ui overrides */
-
-.ui-dialog {
-
-  background-color: #fff;
-  border: 2px solid #000;
-}
-
-.ui-dialog-content {
-  padding: 0px 25px 30px 25px;
-}
-
-.ui-widget-header {
-  background: none;
-  border: none; 
-}
-.ui-button-icon-only .ui-button-text, .ui-button-icons-only .ui-button-text {
-  padding: .4em;
-  text-indent: -9999999px;
-}
-
-.ui-button .ui-button-text {
-  display: block;
-  line-height: normal;
-  cursor: pointer;
-}
-.ui-draggable .ui-dialog-titlebar {
-  cursor: move;
-}
-.ui-dialog .ui-dialog-titlebar-close {
-  position: absolute;
-  right: .5em;
-  top: 5px;
-  width: 25px;
-  height: 25px;
-}
-.ui-dialog .ui-dialog-titlebar-close:focus {
-  outline: none;
-}
-.ui-widget-header .ui-state-default, .ui-widget-header .ui-state-default {
-  border: none;
-  background: #fff url(x.png);
-  font-weight: normal;
-  color: #000;
-}
-.ui-state-default .ui-icon {
-  background-image: url(x.png);
-}
-.ui-state-default .ui-icon:focus {
-  outline: none;
 }
 

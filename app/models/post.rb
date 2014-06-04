@@ -5,6 +5,9 @@ class Post < ActiveRecord::Base
   validates_presence_of :title, :body, :user_id
   
   before_save :check_published_at
+  extend FriendlyId
+  friendly_id :title, use: [:slugged, :finders]
+  
   
   accepts_nested_attributes_for :images, :reject_if => proc {|x| x['image'].blank? }, :allow_destroy => true
     

@@ -1,0 +1,8 @@
+.title= link_to post.title, post
+.metadata
+  = l post.published_at, :format => :short
+  %span.byline= "posted by #{post.user.username}"
+- unless post.images.empty?
+  - post.images.each do |image|
+    = image_tag image.image.url(:small)
+.body= raw post.body

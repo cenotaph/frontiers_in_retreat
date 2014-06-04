@@ -1,0 +1,131 @@
+/* jquery-ui overrides */
+
+.ui-dialog {
+
+  background-color: #fff;
+  border: 2px solid #000;
+}
+
+.ui-dialog-content {
+  padding: 0px 25px 30px 25px;
+}
+
+.ui-widget-header {
+  background: none;
+  border: none; 
+}
+.ui-button-icon-only .ui-button-text, .ui-button-icons-only .ui-button-text {
+  padding: .4em;
+  text-indent: -9999999px;
+}
+
+.ui-button .ui-button-text {
+  display: block;
+  line-height: normal;
+  cursor: pointer;
+}
+.ui-draggable .ui-dialog-titlebar {
+  cursor: move;
+}
+.ui-dialog .ui-dialog-titlebar-close {
+  position: absolute;
+  right: .25em;
+  top: 10px;
+  width: 18px;
+  height: 18px;
+}
+.ui-dialog .ui-dialog-titlebar-close:focus {
+  outline: none;
+}
+.ui-widget-header .ui-state-default, .ui-widget-header .ui-state-default {
+  border: none;
+  background: #fff url(x.png);
+  font-weight: normal;
+  color: #000;
+}
+.ui-state-default .ui-icon {
+  background-image: url(x.png);
+}
+.ui-state-default .ui-icon:focus {
+  outline: none;
+}
+
+/* jquery-ui overrides */
+
+.ui-dialog {
+
+  background-color: #fff;
+  border: 2px solid #000;
+}
+
+.ui-dialog-content {
+  padding: 0px 25px 30px 25px;
+}
+
+.ui-widget-header {
+  background: none;
+  border: none; 
+}
+.ui-button-icon-only .ui-button-text, .ui-button-icons-only .ui-button-text {
+  padding: .4em;
+  text-indent: -9999999px;
+}
+
+.ui-button .ui-button-text {
+  display: block;
+  line-height: normal;
+  cursor: pointer;
+}
+.ui-draggable .ui-dialog-titlebar {
+  padding: 0px;
+  margin: 0px;
+  cursor: move;
+}
+.ui-dialog .ui-dialog-titlebar-close {
+  position: absolute;
+  right: .25em;
+  top: 10px;
+  width: 18px;
+  height: 18px;
+}
+.ui-dialog .ui-dialog-titlebar-close:focus {
+  outline: none;
+}
+.ui-widget-header .ui-state-default, .ui-widget-header .ui-state-default {
+  border: none;
+  background: #fff url(x.png);
+  font-weight: normal;
+  color: #000;
+}
+.ui-state-default .ui-icon {
+  background-image: url(x.png);
+}
+.ui-state-default .ui-icon:focus {
+  outline: none;
+}
+
+.ui-dialog { 
+  .ui-dialog-content {
+    padding: 0px 10px 0px 20px;
+  }
+  .ui-dialog-title {
+    margin: 0px;
+  }
+}
+
+// posts
+
+
+.post {
+
+  .metadata {
+    margin-bottom: 15px;
+    span.byline {
+      color: #666;
+    }
+  }
+  .body {
+    margin-top: 25px;
+    padding-bottom: 25px;
+  }
+}

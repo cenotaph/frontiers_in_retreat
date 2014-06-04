@@ -31,9 +31,9 @@
       .letter T
     #main_menu
       %ul
-        %li= link_to 'News', '#'
-        %li= link_to 'About', '#'
-        %li= link_to 'Organisers', '#'
+        %li= link_to 'News', '#', :class => :dialog, :onclick => "showUrlInDialog('#{posts_path}'); $(this).css('color', 'red'); return false;"
+        %li= link_to 'About', '#', :class => :dialog, :onclick => "showUrlInDialog('#{page_path(:about)}');$(this).css('color', 'red'); return false;"
+        %li= link_to 'Sites', '#'
         %li= link_to 'Artists', '#'
         %li= link_to 'Projects', '#'        
         %li= link_to 'Archive', '#'
@@ -44,3 +44,7 @@
     = yield 
     = javascript_include_tag "application" 
     = render :partial => 'application/google_map'
+    :javascript
+      $(document).ready(function() {
+        #{yield :jquery}
+      });
