@@ -6,7 +6,7 @@ class CreatePosts < ActiveRecord::Migration
       t.string :slug
       t.boolean :published
       t.references :user, index: true
-
+      t.datetime :published_at
       t.timestamps
     end
   end

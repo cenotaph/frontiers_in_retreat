@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(version: 20140604161358) do
     t.string   "slug"
     t.boolean  "published"
     t.integer  "user_id"
+    t.datetime "published_at"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
