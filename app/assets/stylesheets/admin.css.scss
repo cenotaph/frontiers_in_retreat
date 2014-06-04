@@ -15,3 +15,19 @@
  *= require foundation_and_overrides
 
  */
+$include-html-global-classes: false;
+@import "foundation/components/global";
+
+.formtastic {
+  li {
+    list-style-type: none;
+  }
+  
+  label.label {
+    background-color: #DBDBDB;
+    color: $primary-color;
+    font-weight: bold;
+    font-size: 0.9em;
+    border: 1px solid $primary-color;
+  }
+}
