@@ -11,7 +11,7 @@ class Admin::PostsController < Admin::BaseController
   protected
   
   def post_params
-    params.require(:post).permit(:title, :body, :user_id, :published, :slug)
+    params.require(:post).permit(:title, :body, :user_id, :published, :slug, :published_at, images_attributes: [:caption, :credit, :image, :id, :_destroy])
   end
   
 end

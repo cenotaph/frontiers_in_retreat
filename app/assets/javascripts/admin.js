@@ -14,6 +14,12 @@
 //= require jquery_ujs
 //= require foundation
 //= require turbolinks
+//= require jquery_nested_form
+//= require foundation-datetimepicker
 //= require_tree ./cms
 
-$(function(){ $(document).foundation(); });
+$(function(){ $(document).foundation(); 
+  $('.datetime_picker').fdatetimepicker({
+      format: 'yyyy-mm-dd hh:ii'
+  });
+});

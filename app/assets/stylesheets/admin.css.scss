@@ -13,7 +13,7 @@
  *= require_tree .
  *= require_self
  *= require foundation_and_overrides
-
+ *= require foundation-datepicker
  */
 $include-html-global-classes: false;
 @import "foundation/components/global";
@@ -22,7 +22,33 @@ $include-html-global-classes: false;
   li {
     list-style-type: none;
   }
-  
+  a.add_nested_fields {
+    text-transform: uppercase;
+    font-size: 0.7em;
+    border: 1px solid $primary-color;
+    padding: 4px;
+    font-weight: bold;
+    color: $primary-color;
+    background-color: #DBDBDB;
+    float: left;
+    clear: left;
+    margin: 20px 0px;
+  }
+  .fields {
+    padding: 10px;
+    border: 1px solid $secondary-color;
+    margin: 10px 10px 0px 0px;
+    float: left;
+    a.remove_nested_fields {
+      text-transform: uppercase;
+      font-size: 0.7em;
+      border: 1px solid $primary-color;
+      padding: 4px;
+      font-weight: bold;
+      color: red;
+      background-color: #DBDBDB;
+    }
+  }
   label.label {
     background-color: #DBDBDB;
     color: $primary-color;

@@ -1,0 +1,25 @@
+.row
+  .small-12.columns
+    = semantic_nested_form_for [:admin, @post], :html => {:multipart => true} do |f|
+      .row
+        .small-6.columns= f.input :user, :label => 'Post as user:', :include_blank => false
+      .row
+        .small-6.columns= f.input :title
+      .row
+        .small-6.columns= f.input :body
+      .row
+        = f.fields_for :images do |ff|
+          - if ff.object.image?
+            = image_tag ff.object.image.url(:small)
+          = ff.input :image
+          = ff.link_to_remove 'Remove this photo'
+      .row= f.link_to_add 'Add an image', :images
+      .row
+        .small-6.columns= f.input :published
+      .row
+        .small-6.columns= f.input :published_at, :hint => 'Leave blank to use now', :label => 'Published at:', :as => :string, :input_html => {:class => "datetime_picker"}
+      .row
+        .small-6.columns= f.submit 'Save', :class => [:button, :round]
+      
+          
+      

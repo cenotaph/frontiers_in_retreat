@@ -45,9 +45,9 @@ gem 'quiet_assets', group: :development
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-# Use debugger
-# gem 'debugger', group: [:development, :test]
 
+gem 'carrierwave'
+gem 'ckeditor'
 gem 'country_select'
 gem 'devise'
 gem 'figaro'
@@ -59,4 +59,6 @@ gem 'haml'
 gem 'has_scope'
 gem 'inherited_resources', github: 'josevalim/inherited_resources'
 gem 'kaminari'
+gem 'mini_magick'
+gem 'nested_form'
 gem 'sass'
