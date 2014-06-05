@@ -43,8 +43,10 @@ gem 'quiet_assets', group: :development
 # gem 'unicorn'
 
 # Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
-
+gem 'capistrano', '~> 3.1.0'
+gem 'capistrano-rails', '~> 1.1.0'
+gem 'capistrano-rvm'
+gem 'capistrano-bundler'
 
 gem 'carrierwave'
 gem 'ckeditor'
