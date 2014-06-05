@@ -2,8 +2,11 @@
 
 .ui-dialog {
   z-index:2999;
-  background-color: #fff;
+  background: #fff;
   border: 2px solid #000;
+  &.grey {
+    background: #f8f6f4;
+  }
 }
 
 .ui-dialog-content {
@@ -39,15 +42,15 @@
   position: absolute;
   right: .25em;
   top: 10px;
-  width: 18px;
-  height: 18px;
+  width: 15px;
+  height: 15px;
 }
 .ui-dialog .ui-dialog-titlebar-close:focus {
   outline: none;
 }
 .ui-widget-header .ui-state-default, .ui-widget-header .ui-state-default {
   border: none;
-  background: #fff url(x.png);
+  background: url(x.png);
   font-weight: normal;
   color: #000;
 }
@@ -89,19 +92,22 @@
   margin: 0px;
   cursor: move;
 }
+.ui-widget-header .ui-state-default, .ui-widget-header .ui-state-default  {
+  background: none;
+}
 .ui-dialog .ui-dialog-titlebar-close {
   position: absolute;
   right: .25em;
   top: 10px;
-  width: 18px;
-  height: 18px;
+  width: 15px;
+  height: 15px;
 }
 .ui-dialog .ui-dialog-titlebar-close:focus {
   outline: none;
 }
 .ui-widget-header .ui-state-default, .ui-widget-header .ui-state-default {
   border: none;
-  background: #fff url(x.png);
+  background: url(x.png);
   font-weight: normal;
   color: #000;
 }
@@ -122,7 +128,7 @@
 }
 
 // posts
-.site_index {
+.site_index, .artist_index {
   h3 {
     text-transform: uppercase;
     color: red;
@@ -132,9 +138,9 @@
   }
   a {
     text-decoration: none;
-    color: blue;
+    color: #4000FF;
   }
-  ul.sites {
+  ul.sites, ul.artists {
     padding: 0px;
     margin: 0px;
     li {
@@ -143,7 +149,7 @@
   }
 }
 
-.site {
+.site, .artist {
   h4 {
     text-transform: uppercase;
     color: black;
@@ -154,6 +160,10 @@
   .body {
     font-size: 0.8em;
     margin-bottom: 1.1em;
+  }
+  a {
+    text-decoration: none;
+    color: #4000ff;
   }
 }
 .post {

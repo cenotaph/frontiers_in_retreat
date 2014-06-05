@@ -1,14 +1,14 @@
 .row
   .small-12.columns
-    = semantic_form_for [:admin, @site], :html => {:multipart => true} do |f|
+    = semantic_form_for [:admin, @site], :html => {:"data-abide" => '', :multipart => true} do |f|
       .row
-        .small-6.columns= f.input :name
+        .small-6.columns= f.input :name, :input_html => {:required => ''}
       .row
         .small-6.columns= f.input :address, :label => 'Street address'
       .row
         .small-6.columns= f.input :city
       .row
-        .small-6.columns= f.input :country
+        .small-6.columns= f.input :country, :input_html => {:required => ''}
       .row
         .small-6.columns= f.input :description
       .row
@@ -18,7 +18,12 @@
         .small-6.columns= f.input :latitude
         .small-6.columns= f.input :longitude
       .row
-        .small-6.columns= f.input :image
+        .small-6.columns= f.input :website, :input_html => {:pattern => :url}
+      .row
+        .small-6.columns
+          - if f.object.image?
+            = image_tag f.object.image.url(:small)
+          = f.input :image, :label => f.object.image? ? 'Change image:' : 'Upload image'
       .row
         .small-6.columns= f.input :lead, :label => "Is lead partner?", :hint => 'Only one site should be lead.'
       .row

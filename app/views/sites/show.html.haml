@@ -1,3 +1,5 @@
 .site
   %h4= @site.name
   .body= raw @site.description
+  - if @site.image?
+    = link_to raw("&#x2192;View photo"), @site.image.url

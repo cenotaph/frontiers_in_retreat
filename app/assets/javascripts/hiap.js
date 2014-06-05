@@ -40,7 +40,7 @@ function siteDialog(url, id) {
       $(this).css('color', '#999');
    });
   } else {
-    if (id == 'siteindex') {
+    if (id == 'siteindex' || id == 'artistindex') {
       $.ajax({
         url: url,
         success: function(data) {
@@ -57,7 +57,7 @@ function siteDialog(url, id) {
       $.ajax({
         url: url,
         success: function(data) {
-          tag.html(data).dialog({modal: false, resizable:false, width: '23em', draggable: true,  maxHeight: 500, position: { my: "right top", at: "right-" + (100 + (10 * howmanyopen)) + " top+" + (25 + (10 * howmanyopen)), of: '#inretreat_header'}
+          tag.html(data).dialog({modal: false, resizable:false, dialogClass: 'grey', width: '23em', draggable: true,  maxHeight: 500, position: { my: "right top", at: "right-" + (100 + (10 * howmanyopen)) + " top+" + (25 + (10 * howmanyopen)), of: '#inretreat_header'}
         }).dialog('open');
         $('#' + id + "_menu").css('color', '#000');
           $('.ui-dialog-titlebar button').click(function() {

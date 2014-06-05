@@ -34,7 +34,7 @@
         %li= link_to 'News', '#', :id => "news_menu", :onclick => "toggleDialog('#{posts_path}', 'news');  return false;"
         %li= link_to 'About', '#', :id => "about_menu", :onclick => "toggleDialog('#{page_path(:about)}', 'about'); return false;"
         %li= link_to 'Sites', '#', :id => "siteindex_menu", :onclick => "siteDialog('#{sites_path}', 'siteindex'); return false;"
-        %li= link_to 'Artists', '#'
+        %li= link_to 'Artists', '#', :id => "artistindex_menu", :onclick => "siteDialog('#{artists_path}', 'artistindex'); return false;"
         %li= link_to 'Projects', '#'        
         -# %li= link_to 'Archive', '#'
         -# %li= link_to 'Glossary', '#'
