@@ -14,6 +14,14 @@
   background: none;
   border: none; 
 }
+
+.ui-corner-all {
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+
 .ui-button-icon-only .ui-button-text, .ui-button-icons-only .ui-button-text {
   padding: .4em;
   text-indent: -9999999px;
