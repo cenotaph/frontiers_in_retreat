@@ -1,7 +1,7 @@
 /* jquery-ui overrides */
 
 .ui-dialog {
-
+  z-index:2999;
   background-color: #fff;
   border: 2px solid #000;
 }
@@ -118,6 +118,7 @@
   h3 {
     text-transform: uppercase;
     color: red;
+    margin: 0;
     font-weight: normal;
     font-family: Helvetica, Arial, sans-serif;
   }
@@ -131,6 +132,20 @@
     li {
       list-style-type: none;
     }
+  }
+}
+
+.site {
+  h4 {
+    text-transform: uppercase;
+    color: black;
+    margin: 0px 0px 10px 0px;
+    font-weight: normal;
+    font-family: Helvetica, Arial, sans-serif;
+  }
+  .body {
+    font-size: 0.8em;
+    margin-bottom: 1.1em;
   }
 }
 .post {
