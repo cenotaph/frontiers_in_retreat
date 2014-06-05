@@ -114,8 +114,25 @@
 }
 
 // posts
-
-
+.site_index {
+  h3 {
+    text-transform: uppercase;
+    color: red;
+    font-weight: normal;
+    font-family: Helvetica, Arial, sans-serif;
+  }
+  a {
+    text-decoration: none;
+    color: blue;
+  }
+  ul.sites {
+    padding: 0px;
+    margin: 0px;
+    li {
+      list-style-type: none;
+    }
+  }
+}
 .post {
 
   .metadata {

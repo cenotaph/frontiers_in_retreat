@@ -1,0 +1,22 @@
+.row
+  .small-12.columns
+    = semantic_nested_form_for([:admin, @artist], :html => {:"data-abide" => ''}) do |f|
+      .row
+        .small-6.columns= f.input :firstname
+        .small-6.columns
+          = f.input :surname, :input_html => {:required => ''}
+          %small.error A surname is required.
+      .row
+        .small-6.columns= f.input :sortname, :label => 'Sorting name', :hint => 'Default will sort by surname; enter something different here if required'
+      .row
+        .small-6.columns= f.input :bio
+      .row
+        .small-6.columns
+          = f.input :website, :input_html => {:pattern => :url}
+          %small.error Websites must begin with http:// or https://
+        
+      .row
+        .small-6.columns= f.input :visible, :hint => 'Check this or the artist will be not show up on the site'
+      .row
+        .small-6.columns= f.submit 'Save', :class => [:button, :round]
+          

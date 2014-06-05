@@ -7,6 +7,7 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   root 'application#static'
+  resources :artists
   resources :pages
   resources :posts
   resources :sites
@@ -57,6 +58,7 @@ Rails.application.routes.draw do
 
 
   namespace :admin do
+    resources :artists
     resources :pages
     resources :posts
     resources :sites

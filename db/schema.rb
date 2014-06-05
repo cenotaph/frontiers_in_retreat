@@ -11,10 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140604211040) do
+ActiveRecord::Schema.define(version: 20140604220249) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "artists", force: true do |t|
+    t.string   "firstname"
+    t.string   "surname"
+    t.text     "bio"
+    t.string   "website"
+    t.string   "slug"
+    t.boolean  "visible"
+    t.string   "sortname"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "ckeditor_assets", force: true do |t|
     t.string   "data_file_name",               null: false
