@@ -16,6 +16,7 @@
 //= require turbolinks
 //= require jquery_nested_form
 //= require foundation-datetimepicker
+//= require ckeditor/init
 //= require_tree ./cms
 
 $(function(){ $(document).foundation(); 
