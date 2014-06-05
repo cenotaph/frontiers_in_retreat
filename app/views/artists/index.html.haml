@@ -1,0 +1,7 @@
+.artist_index
+  %h3 Artists
+  %p 25 invited artists from across Europe will take part in research. Frontiers in Retreat is organised by production residencies in several Frontiers locations, working independently with HIAP or in collaboration with other participants.
+  %p
+    %ul.artists
+      - @artists.each do |artist|
+        %li= link_to raw("&#x2192;") + artist.name, '#', :onClick => "siteDialog('#{artist_path(artist.id)}', '#{artist.id}'); return false;"  

@@ -39,7 +39,14 @@
         -# %li= link_to 'Archive', '#'
         -# %li= link_to 'Glossary', '#'
     #map_canvas
-                  
+    #map_locations
+      %ul.locations
+        - @sites.each do |site|
+          %li
+            = link_to site.name, site
+            .lat= site.latitude
+            .lng= site.longitude
+            .slug= site.slug              
       
     = yield 
     = javascript_include_tag "application" 

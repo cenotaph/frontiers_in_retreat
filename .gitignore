@@ -49,3 +49,6 @@ public/uploads/*
 /config/database.yml
 *.sql
 sync_db
+config/deploy/*
+Capfile
+config/deploy.rb

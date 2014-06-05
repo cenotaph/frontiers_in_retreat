@@ -1,0 +1,5 @@
+.artist
+  %h4= @artist.name
+  .body= raw @artist.bio
+  - unless @artist.website.blank?
+    = link_to raw("&#x2192;Link to website"), @artist.website

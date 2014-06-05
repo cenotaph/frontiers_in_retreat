@@ -1,7 +1,0 @@
-#map_locations
-  %ul.locations
-    - @sites.each do |site|
-      %li
-        = link_to site.name, site
-        .lat= site.latitude
-        .lng= site.longitude

@@ -6,6 +6,10 @@
   border: 2px solid #000;
   &.grey {
     background: #f8f6f4;
+    &::-webkit-scrollbar-track {
+          background-color: #fff;
+    } /* the new scrollbar will have a flat appearance with the set background color */
+ 
   }
 }
 

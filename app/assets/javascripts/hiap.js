@@ -44,12 +44,13 @@ function siteDialog(url, id) {
       $.ajax({
         url: url,
         success: function(data) {
-          tag.html(data).dialog({modal: false, resizable: false, width: '23em', draggable: true,  maxHeight: 500, position: { my: "left top", at: "left bottom+20", of: '#main_menu'}
+          tag.html(data).dialog({modal: false, resizable: false, width: '23em', draggable: true,  maxHeight: 500, position: { my: "left top", at: "left+" + (10 * howmanyopen) + " bottom+" + (20 + (10 * howmanyopen)), of: '#main_menu'}
         }).dialog('open');
         $('#' + id + "_menu").css('color', '#000');
           $('.ui-dialog-titlebar button').click(function() {
             $('#main_menu a').css('color', "#999");
-            $("#" + id).remove();          
+            $("#" + id).remove();
+            clearAllMarkers();          
           });
         }
       }); 
@@ -62,10 +63,26 @@ function siteDialog(url, id) {
         $('#' + id + "_menu").css('color', '#000');
           $('.ui-dialog-titlebar button').click(function() {
             $('#main_menu a').css('color', "#999"); 
-            $("#" + id).remove();         
+            $("#" + id).remove(); 
+            clearAllMarkers();        
           });
         }
       }); 
     }
   }
 }
+
+
+function clearAllMarkers() {
+  var baseImage = {
+        url: "/assets/white_dot.png",
+        size: new google.maps.Size(24, 24),
+        anchor: new google.maps.Point(8, 8)
+      };
+  $.each(allMarkers, function(m, mm) {
+    
+    mm.setIcon(baseImage);
+  });
+}
+
+

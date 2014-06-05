@@ -1,6 +1,8 @@
 <script type="text/javascript">
+  var map;
+  var allMarkers = [];
   $(document).ready(function() {
-
+    
     function initialize() {
       var darkStyle = [ 
       {featureType: "water",
@@ -77,7 +79,8 @@
           loc: $(el).find('a').text(),
           lat: $(el).find('.lat').text(),
           lng: $(el).find('.lng').text(),
-          href: $(el).find('a').attr('href')
+          href: $(el).find('a').attr('href'),
+          slug: $(el).find('.slug').text()
         });
       });
       gBox = new google.maps.LatLngBounds();
@@ -87,8 +90,13 @@
       });
       
       baseImage = {
-        url: "/assets/yellow_dot.png",
-        size: new google.maps.Size(16, 16),
+        url: "/assets/white_dot.png",
+        size: new google.maps.Size(24, 24),
+        anchor: new google.maps.Point(8, 8)
+      };
+      hoverImage = {
+        url: "/assets/red_dot.png",
+        size: new google.maps.Size(24, 24),
         anchor: new google.maps.Point(8, 8)
       };
 
@@ -105,11 +113,12 @@
             },
           mapTypeId: 'darkwater'
       };
-      var map = new google.maps.Map(document.getElementById("map_canvas"),
+      map = new google.maps.Map(document.getElementById("map_canvas"),
                 myOptions);
         map.mapTypes.set('darkwater', new google.maps.StyledMapType(darkStyle, { name: 'Dark' }));
       map.fitBounds(gBox);
       // Add markers
+      
       $.each(points, function(i, point) {
         var latlng,
             marker,
@@ -124,14 +133,40 @@
         };
 
         marker = new google.maps.Marker(markerOptions);
-      });
+        allMarkers.push(marker);
+        google.maps.event.addListener(marker, 'mouseover', function() {
+            marker.setIcon(hoverImage);
+        });
+        google.maps.event.addListener(marker, 'mouseout', function() {
+            marker.setIcon(baseImage);
+        });
+        google.maps.event.addListener(marker, 'click', function() {
+          siteDialog(point.href, point.slug);
+          $.each(allMarkers, function(m, mm) {
+            if (mm == marker) {
+              mm.setIcon(hoverImage);
+            } else {
+              mm.setIcon(baseImage);
+            }
+          });
+          google.maps.event.addListener(marker, 'mouseout', function() {
+              marker.setIcon(hoverImage);
+          });
             
+        });
+      });
+    <%= yield :aftermap %>   
     }
     google.maps.event.addDomListener(window, "load", initialize);
-    
+
 
     
-  });
+    function clearAllMarkers() {
+      $.each(allMarkers, function(m, mm) {
+        mm.setIcon(baseImage);
+      });
+    }
 
   
+  });
 </script>
