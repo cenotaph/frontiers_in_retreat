@@ -17,7 +17,11 @@
  *= require hiap
  */
 html { height: 100% }
-body { height: 100%; margin: 0; padding: 0 }
+body { height: 100%; margin: 0; padding: 0;  }
+p {
+  font-size: 1.06em;
+  line-height: 1.42em;
+}
 :focus {
   outline: none;
 }
@@ -68,6 +72,8 @@ body { height: 100%; margin: 0; padding: 0 }
     padding: 5px 0px 6px 10px;
     margin: 0px;
     li {
+      font-size: 1.38em;
+      line-height: 1.32em;
       list-style-type: none;
       a {
         text-transform: uppercase;
@@ -91,10 +97,12 @@ body { height: 100%; margin: 0; padding: 0 }
   font-size: 8vh;
   font-family: Helvetica, Arial, sans-serif;
   font-weight: bold;
-  color: transparent;
+
   -webkit-text-fill-color: transparent;
-   -webkit-text-stroke: 2px #000; 
-   margin: 0.3em 0px;
+  -webkit-text-stroke: 2px #000; 
+  color: white;
+  margin: 0.3em 0px;
+ 
 }
 
 .letter {
@@ -103,10 +111,22 @@ body { height: 100%; margin: 0; padding: 0 }
   font-size: 9.5vh;
   font-family: Helvetica, Arial, sans-serif;
   font-weight: bold;
-  color: transparent;
-  -webkit-text-fill-color: transparent;
-   -webkit-text-stroke: 2px #000;
 
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 2px #000;
+  color: transparent;
+  
+}
+@-moz-document url-prefix() {
+  
+  .letter, .letter_in {
+    color:white;
+    text-shadow:
+     -1px -1px 0 #000,  
+      1px -1px 0 #000,
+      -1px 1px 0 #000,
+       1px 1px 0 #000;
+  }
 }
 
 .static p {
