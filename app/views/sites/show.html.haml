@@ -2,9 +2,13 @@
   %h4= @site.name
   .body= raw @site.description
   - if @site.image?
-    = link_to raw("&#x2192;View photo"), @site.image.url
+    .link[@site]= link_to raw("&#x2192;View photo"), @site.image.url
+    :javascript
+      $('#site_#{@site.id}').lightbox_me();
+
+
   - unless @site.website.blank?
-    = link_to raw("&#x2192;Link to website"), @site.website
+    .link= link_to raw("&#x2192;Link to website"), @site.website
 :javascript
   var hoverImage = {
         url: "/assets/red_dot.png",

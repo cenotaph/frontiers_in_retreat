@@ -6,7 +6,7 @@
       .row
         .small-6.columns= f.input :title
       .row
-        .small-6.columns= f.input :body
+        .small-10.columns= f.cktext_area :body
       .row
         = f.fields_for :images do |ff|
           - if ff.object.image?

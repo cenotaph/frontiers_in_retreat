@@ -5,4 +5,10 @@ class Artist < ActiveRecord::Base
   def name
     [firstname, surname].join(' ')
   end
+
+  def sortkey
+    sortname.blank? ? surname.strip : sortname.strip
+  end
+  
 end
+

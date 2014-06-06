@@ -52,3 +52,4 @@ sync_db
 config/deploy/*
 Capfile
 config/deploy.rb
+.DS_Store

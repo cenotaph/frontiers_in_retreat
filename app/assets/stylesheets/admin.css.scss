@@ -18,6 +18,10 @@
 $include-html-global-classes: false;
 @import "foundation/components/global";
 
+.top-bar .name h1 {
+  color: white;
+  padding-left: 10px;
+}
 .formtastic {
   li {
     list-style-type: none;
