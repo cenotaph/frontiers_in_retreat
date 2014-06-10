@@ -3,8 +3,6 @@
   .body= raw @site.description
   - if @site.image?
     .link[@site]= link_to raw("&#x2192;View photo"), @site.image.url
-    :javascript
-      $('#site_#{@site.id}').lightbox_me();
 
 
   - unless @site.website.blank?

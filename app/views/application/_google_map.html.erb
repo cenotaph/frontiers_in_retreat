@@ -158,15 +158,5 @@
     <%= yield :aftermap %>   
     }
     google.maps.event.addDomListener(window, "load", initialize);
-
-
-    
-    function clearAllMarkers() {
-      $.each(allMarkers, function(m, mm) {
-        mm.setIcon(baseImage);
-      });
-    }
-
-  
   });
 </script>

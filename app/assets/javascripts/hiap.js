@@ -17,9 +17,9 @@ function toggleDialog(url, id) {
       success: function(data) {
         tag.html(data).dialog({modal: false, width: '32em', draggable: true,  maxHeight: 500, position: { my: "left top", at: "right+20 top", of: '#main_menu'}
       }).dialog('open');
-      $('#' + id + "_menu").css('color', '#000');
+      $('#' + id + "_menu").css('color', 'red');
         $('.ui-dialog-titlebar button').click(function() {
-          $('#main_menu a').css('color', "#999");          
+          $('#main_menu a').css('color', "#000");          
         });
       }
     });  
@@ -33,22 +33,22 @@ function siteDialog(url, id) {
 
     $("#" +id).dialog("close");
     $("#" + id).remove();
-    $('#' + id + "_menu").css('color', '#999');
+    $('#' + id + "_menu").css('color', 'red');
     $('#' + id + "_menu").hover(function() {
           $(this).css('color', 'red'); 
        },  function() {
-      $(this).css('color', '#999');
+      $(this).css('color', 'red');
    });
   } else {
     if (id == 'siteindex' || id == 'artistindex') {
       $.ajax({
         url: url,
         success: function(data) {
-          tag.html(data).dialog({modal: false, resizable: false, width: '23em', draggable: true,  maxHeight: 500, position: { my: "left top", at: "left+" + (10 * howmanyopen) + " bottom+" + (20 + (10 * howmanyopen)), of: '#main_menu'}
+          tag.html(data).dialog({modal: false, resizable: false, width: '23em', draggable: true,  maxHeight: 500, position: { my: "left top", at: "left+" + (10 + (10 * howmanyopen)) + " bottom+" + (20 + (10 * howmanyopen)), of: '#main_menu'}
         }).dialog('open');
-        $('#' + id + "_menu").css('color', '#000');
+        $('#' + id + "_menu").css('color', 'red');
           $('.ui-dialog-titlebar button').click(function() {
-            $('#main_menu a').css('color', "#999");
+            $('#main_menu a').css('color', "#000");
             $("#" + id).remove();
             clearAllMarkers();          
           });
@@ -58,7 +58,7 @@ function siteDialog(url, id) {
       $.ajax({
         url: url,
         success: function(data) {
-          tag.html(data).dialog({modal: false, resizable:false, dialogClass: 'grey', width: '23em', draggable: true,  maxHeight: 500, position: { my: "right top", at: "right-" + (100 + (10 * howmanyopen)) + " top+" + (25 + (10 * howmanyopen)), of: '#inretreat_header'}
+          tag.html(data).dialog({modal: false, resizable:false, dialogClass: 'grey', width: '23em', draggable: true,  maxHeight: 500, position: { my: "right top", at: "right-" + (150 + (10 * howmanyopen)) + " top+" + (25 + (10 * howmanyopen)), of: '#inretreat_header'}
         }).dialog('open');
         $('#' + id + "_menu").css('color', '#000');
           $('.ui-dialog-titlebar button').click(function() {
