@@ -99,13 +99,7 @@
 .ui-widget-header .ui-state-default, .ui-widget-header .ui-state-default  {
   background: none;
 }
-.ui-dialog .ui-dialog-titlebar-close {
-  position: absolute;
-  right: .25em;
-  top: 10px;
-  width: 15px;
-  height: 15px;
-}
+
 .ui-dialog .ui-dialog-titlebar-close:focus {
   outline: none;
 }
@@ -205,4 +199,21 @@
     font-family: Helvetica, Arial, sans-serif;
     line-height: 1.42em;
   }
+}
+
+@media screen and (max-height: 600px) {
+  #frontiers_header img {
+    height: auto;
+  }
+  #inretreat_header img {
+    height: auto;
+  }
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2) {
+  .ui-dialog .ui-dialog-titlebar-close {
+    width: 30px;
+    height: 30px;
+  }
+  
 }
