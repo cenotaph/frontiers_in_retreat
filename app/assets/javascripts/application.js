@@ -16,3 +16,4 @@
 //= require jquery.ui.dialog
 //= require turbolinks
 //= require hiap
+//= require jquery.fancybox.pack
