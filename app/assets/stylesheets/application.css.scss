@@ -16,11 +16,14 @@
  *= require jquery.ui.dialog
  *= require hiap
  */
-
+* {
+  font-family: Helvetica, Arial, sans-serif;
+  
+}
 html { height: 100% }
 body { height: 100%; margin: 0; padding: 0; font-family: Helvetica, Arial, sans-serif; }
 p {
-  font-family: Helvetica, Arial, sans-serif;
+  
   font-size: 1.06em;
   line-height: 1.42em;
 }
@@ -49,7 +52,7 @@ p {
 
 #frontiers_header {
   position: fixed;
-  width: 10%;
+
   z-index: 999;
   padding-top: 15px;
   img {
@@ -59,8 +62,8 @@ p {
 
 #inretreat_header {
   position: fixed;
-  left: 94%;
-  width: 10%;
+  right: 5px;
+
   z-index: 999;
   img {
     height: 92vH;

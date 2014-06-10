@@ -4,68 +4,7 @@
   $(document).ready(function() {
     
     function initialize() {
-      var darkStyle = [ 
-      {featureType: "water",
-      elementType: "all",
-      stylers: [
-      { color: "#0099ff" },
-      { lightness: 18}]}
-      ,
-      {featureType: "administrative",
-      elementType: "labels",
-      stylers: [      
-      { hue: "#1100ff" },
-      { saturation: -100 },
-      { lightness: -18 }]}
-      ,
-      {featureType: "poi",
-      elementType: "all",
-      stylers: [
-      { lightness: -18 },
-      { visibility: "off" }]}
-      ,
-      {featureType: "landscape",
-      elementType: "all",
-      stylers: [
-      { visibility: "on" }]}
-      ,
-      {featureType: "water",
-      elementType: "labels",
-      stylers: [      
-      { lightness: -18 },
-      { visibility: "off" }]}
-      ,
-      {featureType: "road",
-      elementType: "labels",
-      stylers: [
-      { hue: "#ffa200" },
-      { visibility: "on" }]}
-      ,
-      {featureType: "administrative",
-      elementType: "geometry",
-      stylers: [
-      { visibility: "simplified" }]}
-      ,
-      {featureType: "road.highway",
-      elementType: "geometry",
-      stylers: [
-      { saturation: -100 }]}
-      ,
-      {featureType: "road.arterial",
-      elementType: "geometry",
-      stylers: [
-      { saturation: -100 }]}
-      ,
-      {featureType: "road.local",
-      elementType: "geometry",
-      stylers: [
-      { lightness: -27 }]}
-      ,
-      {featureType: "transit",
-      elementType: "all",
-      stylers: [
-      { visibility: "off" }]}
-      ];
+      var darkStyle = [ { "featureType": "road", "stylers": [ { "visibility": "off" } ] },{ "featureType": "administrative", "stylers": [ { "visibility": "off" } ] },{ "featureType": "water", "stylers": [ { "color": "#5092ff" } ] },{ "elementType": "labels", "stylers": [ { "visibility": "off" } ] } ];
       
         var latlng = new google.maps.LatLng(59.436660, 24.737386);
         
@@ -92,6 +31,7 @@
       baseImage = {
         url: "/assets/white_dot.png",
         size: new google.maps.Size(24, 24),
+        origin: null,
         anchor: new google.maps.Point(8, 8)
       };
       hoverImage = {
@@ -129,7 +69,8 @@
         markerOptions = {
           position: latlng,
           map: map,
-          icon: baseImage
+          icon: baseImage,
+          optimized: false
         };
 
         marker = new google.maps.Marker(markerOptions);
