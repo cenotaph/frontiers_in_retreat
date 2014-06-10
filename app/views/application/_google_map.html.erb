@@ -86,6 +86,7 @@
         });
         google.maps.event.addListener(marker, 'click', function() {
           siteDialog(point.href, point.slug);
+
           $.each(allMarkers, function(m, mm) {
             if (mm == marker) {
               mm.setIcon(hoverImage);

@@ -77,6 +77,7 @@ function clearAllMarkers() {
   var baseImage = {
         url: "/assets/white_dot.png",
         size: new google.maps.Size(24, 24),
+        scaledSize: new google.maps.Size(24, 24),
         anchor: new google.maps.Point(8, 8)
       };
   $.each(allMarkers, function(m, mm) {
