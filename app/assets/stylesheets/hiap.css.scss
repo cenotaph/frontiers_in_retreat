@@ -171,11 +171,17 @@
 
 }
 .post {
+  border-top: 2px solid #000;
+  padding: 30px 0px;
+  &.post0 {
+    border-top: none;
+    padding: 0px 0px 30px 0px;
+  }
   .title {
     font-size: 1.06em;
     font-family: Helvetica, Arial, sans-serif;
     line-height: 1.42em;
-    a{
+    a {
       text-decoration: none;
     }
   }

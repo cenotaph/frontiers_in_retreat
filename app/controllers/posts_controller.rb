@@ -3,7 +3,7 @@ class PostsController < InheritedResources::Base
   actions :index, :show
   
   def index
-    @posts = Post.published
+    @posts = Post.published.order('published_at DESC').page(params[:page])
     render :layout => false
   end
   
