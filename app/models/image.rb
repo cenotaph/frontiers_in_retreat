@@ -10,4 +10,9 @@ class Image < ActiveRecord::Base
       self.image_width, self.image_height = `identify -format "%wx%h" #{image.file.path}`.split(/x/)
     end
   end
+  
+  def caption_and_credit
+    [caption.blank? ? nil : caption.upcase, credit.blank? ? nil : "Photo: #{credit}"].compact.join(' / ')
+  end
+  
 end

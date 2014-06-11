@@ -3,6 +3,28 @@
   = l post.published_at, :format => :short
   %span.byline= "posted by #{post.user.username}"
 - unless post.images.empty?
-  - post.images.each do |image|
-    = image_tag image.image.url(:small)
+  - if post.images.size > 1
+    .slideshow
+      = link_to(post.images.first.image.url(:large), {:class => :fancybox, :rel => "gallery_#{post.id.to_s}", :id => "image_#{post.images.first.id}"}) do
+        = image_tag(post.images.first.image.url(:small), :alt => post.images.first.caption_and_credit)
+        .slideshow_hover
+          .text Slideshow
+      - post.images.each do |image|
+        = link_to(image_tag(image.image.url(:small), :alt => image.caption_and_credit), image.image.url(:large), :rel => "gallery_#{post.id.to_s}", :class => [:fancybox, :hidden])
+  - else  
+    - post.images.each do |image|
+      = link_to image_tag(image.image.url(:small), :alt => image.caption_and_credit), image.image.url(:large), :class => :fancybox
+    
+    
+  :javascript
+    $(".fancybox").fancybox({
+        beforeShow : function() {
+                var alt = this.element.find('img').attr('alt');
+        
+                this.inner.find('img').attr('alt', alt);
+        
+                this.title = alt;
+            },
+        padding : 0
+    });
 .body= raw post.body
