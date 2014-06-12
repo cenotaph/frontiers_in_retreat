@@ -76,7 +76,7 @@
 }
 
 #fancybox-loading, .fancybox-close {
-	background-image: url('x_inverted.png');
+	background-image: url('fancybox_loading.png');
 }
 
 .fancybox-prev span {
