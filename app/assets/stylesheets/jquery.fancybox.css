@@ -105,9 +105,9 @@
 }
 
 .fancybox-close {
-	position: absolute;
-	top: -18px;
-	right: -18px;
+	position: fixed;
+	top: 5px;
+	right: 8px;
 	width: 23px;
 	height: 23px;
 	cursor: pointer;

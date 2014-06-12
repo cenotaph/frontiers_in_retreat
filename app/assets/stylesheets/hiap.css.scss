@@ -162,7 +162,9 @@
     font-size: 1.06em;
     line-height: 1.42em;
     font-family: Helvetica, Arial, sans-serif;
-    margin-bottom: 1.1em;
+    p {
+      margin: 10px 0px 0px 0px;
+    }
   }
   a {
     text-decoration: none;
@@ -172,10 +174,10 @@
 }
 .post {
   border-top: 2px solid #000;
-  padding: 30px 0px;
+  padding: 20px 0px 0px 0px;
   &.post0 {
     border-top: none;
-    padding: 0px 0px 30px 0px;
+    padding: 0px;
   }
   .title {
     font-size: 1.06em;
@@ -199,6 +201,9 @@
     font-size: 1.06em;
     font-family: Helvetica, Arial, sans-serif;
     line-height: 1.42em;
+    p {
+      margin-bottom: 5px;
+    }
   }
 }
 .page {
@@ -240,9 +245,11 @@
     height: 279px;
     .text {
       padding: 10px;
-      border: 2px solid #000;
+//      border: 2px solid #000;
       text-transform: uppercase;
-      width: 7em;
+
+      font-size: 24px;
+      line-height: 1.42em;
       margin: 29%;
     }
 //    opacity: 0.75;
