@@ -75,10 +75,13 @@
 	max-height: 100%;
 }
 
-#fancybox-loading, .fancybox-close {
+#fancybox-loading {
 	background-image: url('fancybox_loading.png');
 }
 
+.fancybox-close {
+  background-image: url('x_inverted.png');
+}
 .fancybox-prev span {
   background-image: url('left_arrow.png');
 }

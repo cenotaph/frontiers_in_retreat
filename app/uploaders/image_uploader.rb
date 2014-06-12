@@ -7,11 +7,11 @@ class ImageUploader < CarrierWave::Uploader::Base
   storage :file
 
   version :small do
-    process :resize_to_fit => [370, 275]
+    process :resize_to_fit => [600, 450]
   end
   
   version :large do
-    process :resize_to_fit => [940, 705]
+    process :resize_to_fit => [800, 600]
   end
   
   def store_dir
