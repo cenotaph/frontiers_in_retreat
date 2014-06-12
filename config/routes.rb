@@ -6,12 +6,12 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'application#static'
+  root 'application#home'
   resources :artists
   resources :pages
   resources :posts
   resources :sites
-  get '/front' => 'application#home'
+
   get '/admin' => 'admin/posts#index'
 
   # Example of regular route:
