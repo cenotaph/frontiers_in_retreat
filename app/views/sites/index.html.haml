@@ -9,7 +9,7 @@
   
   %p
     %ul.sites
-      - @sites.where("lead is not true").each do |site|
+      - @sites.where("lead is not true").sort_by(&:name).each do |site|
         %li= link_to raw("&#x2192;") + site.name, '#', :onClick => "siteDialog('#{site_path(site.slug)}', '#{site.slug}'); map.panTo(new google.maps.LatLng(#{site.latitude}, #{site.longitude}));clearAllMarkers(); return false;"
 
       

@@ -3,7 +3,7 @@ class Artist < ActiveRecord::Base
   scope :visible, -> { where(visible: true)}
   
   def name
-    [firstname, surname].join(' ')
+    [firstname.blank? ? nil : firstname, surname].compact.join(' ')
   end
 
   def sortkey
