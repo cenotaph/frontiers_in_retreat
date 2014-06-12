@@ -5,11 +5,11 @@
 - unless post.images.empty?
   - if post.images.size > 1
     .slideshow
-      = link_to(post.images.first.image.url(:large), {:class => :fancybox, :rel => "gallery_#{post.id.to_s}", :id => "image_#{post.images.first.id}"}) do
-        = image_tag(post.images.first.image.url(:small), :alt => post.images.first.caption_and_credit)
+      = link_to(post.images[0].image.url(:large), {:class => :fancybox, :rel => "gallery_#{post.id.to_s}", :id => "image_#{post.images[0].id}"}) do
+        = image_tag(post.images[0].image.url(:small), :alt => post.images[0].caption_and_credit)
         .slideshow_hover
           .text Slideshow
-      - post.images.each do |image|
+      - post.images[1..-1].each do |image|
         = link_to(image_tag(image.image.url(:small), :alt => image.caption_and_credit), image.image.url(:large), :rel => "gallery_#{post.id.to_s}", :class => [:fancybox, :hidden])
   - else  
     - post.images.each do |image|
