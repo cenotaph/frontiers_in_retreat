@@ -71,7 +71,7 @@ function siteDialog(url, id) {
         $("#" + id).remove();
       }
         }).dialog('open');
-        var offTop = tag.offset().top - 43;
+        var offTop = tag.offset().top - 40;
         tag.scrollTop(offTop)
         $('#' + id + "_menu").css('color', 'red');
           $('.ui-dialog-titlebar button').click(function() {
