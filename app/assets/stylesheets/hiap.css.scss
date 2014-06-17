@@ -214,14 +214,6 @@
   }
 }
 
-@media screen and (max-height: 600px) {
-  #frontiers_header img {
-    height: auto;
-  }
-  #inretreat_header img {
-    height: auto;
-  }
-}
 
 // image slideshow
 
@@ -274,3 +266,22 @@
   border-radius: none !important;
  background: none !important; 
 }
+
+
+@media screen and (max-height: 600px) {
+  #frontiers_header img {
+    height: auto;
+  }
+  #inretreat_header img {
+    height: auto;
+  }
+}
+@media screen and (min-height: 601px) {
+  #frontiers_header img {
+    height: 92vH;
+  }
+  #inretreat_header img {
+    height: 92vH;
+  }
+}  
+  

@@ -7,7 +7,7 @@
       $(".fancybox").fancybox();
 
   - unless @site.website.blank?
-    .link= link_to raw("&#x2192;Link to website"), @site.website
+    .link= link_to raw("&#x2192;Link to website"), @site.website, :target => :_blank
 :javascript
   var hoverImage = {
         url: "/assets/red_dot.png",

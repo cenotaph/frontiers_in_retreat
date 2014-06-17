@@ -19,9 +19,10 @@ function toggleDialog(url, id) {
     $.ajax({
       url: url,
       success: function(data) {
-        tag.html(data).dialog({modal: false, width: '32em', draggable: true, width: w,  resizable: false, maxHeight: 700, position: { my: "left top", at: "right+20 top", of: '#main_menu'},       close: function(event, ui) {  
-        $("#" + id).remove();
-      }
+        tag.html(data).dialog({modal: false, width: '32em', draggable: true, width: w,  resizable: false, maxHeight: 700, position: { my: "left top", at: "right+20 top", of: '#main_menu'},       
+        close:     function(event, ui) {  
+          $("#" + id).remove();
+        }
       }).dialog('open');
       $('#' + id + "_menu").css('color', 'red');
         $('.ui-dialog-titlebar button').click(function() {
@@ -51,32 +52,35 @@ function siteDialog(url, id) {
       $.ajax({
         url: url,
         success: function(data) {
-          tag.html(data).dialog({modal: false, resizable: false, width: '23em', draggable: true,  maxHeight: 500, position: { my: "left top", at: "left+" + (10 + (10 * howmanyopen)) + " bottom+" + (40 + (10 * howmanyopen)), of: '#main_menu'}, close: function(event, ui) {  
+          tag.html(data).dialog({modal: false, resizable: false, width: '23em', draggable: true,  maxHeight: 700, position: { my: "left top", at: "left+" + (10 + (10 * howmanyopen)) + " bottom+" + (40 + (10 * howmanyopen)), of: '#main_menu'}, close: function(event, ui) {  
         $("#" + id).remove();
       }
         }).dialog('open');
+        
         $('#' + id + "_menu").css('color', 'red');
           $('.ui-dialog-titlebar button').click(function() {
             $('#main_menu a').css('color', "#000");
-            $("#" + id).remove();
+            // $("#" + id).remove();
             clearAllMarkers();          
           });
+          
         }
       }); 
     } else {
       $.ajax({
         url: url,
         success: function(data) {
-          tag.html(data).dialog({modal: false, resizable:false, dialogClass: 'grey', width: '23em', draggable: true,  maxHeight: 700, position: { my: "right top", at: "right-" + (85 + (10 * howmanyopen)) + " top+" + (25 + (10 * howmanyopen)), of: '#inretreat_header'}, close: function(event, ui) {  
+          tag.html(data).dialog({modal: false, resizable:false, dialogClass: 'grey', width: '23em', draggable: true,  maxHeight: 600, position: { my: "right top", at: "right-" + (85 + (10 * howmanyopen)) + " top+" + (25 + (10 * howmanyopen)), of: '#inretreat_header'}, close: function(event, ui) {  
         $("#" + id).remove();
       }
         }).dialog('open');
-        var offTop = tag.offset().top - 40;
-        tag.scrollTop(offTop)
+        // var offTop = tag.offset().top - 150;
+        // tag.scrollTop(offTop);
+
         $('#' + id + "_menu").css('color', 'red');
           $('.ui-dialog-titlebar button').click(function() {
             $('#main_menu a').css('color', "#000"); 
-            $("#" + id).remove(); 
+            // $("#" + id).remove(); 
             clearAllMarkers();        
           });
         }
@@ -97,6 +101,7 @@ function clearAllMarkers() {
     
     mm.setIcon(baseImage);
   });
+  return false;
 }
 
 

@@ -1,4 +1,7 @@
-.post#the_post
+.post#news
 = content_for :jquery do
   :plain
-    $("#the_post").html("#{escape_javascript(render(:partial => 'post', :locals => {:post => @post}))}").dialog({modal: true, width: '32em', draggable: true, maxHeight: 550, resizable: false, position: { my: "left top", at: "right+20 top", of: '#main_menu'}}).dialog('open');
+    $("#news").html("#{escape_javascript(render(:partial => 'post', :locals => {:post => @post}))}").dialog({modal: true, width: '32em', draggable: true, maxHeight: 700, resizable: false, position: { my: "left top", at: "right+20 top", of: '#main_menu'},       
+        close:     function(event, ui) {  
+          $("#" + id).remove();
+        }}).dialog('open');

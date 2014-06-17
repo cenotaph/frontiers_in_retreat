@@ -36,4 +36,11 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
+  config.action_controller.asset_host = Proc.new { |source|
+   if source.starts_with?('/image')  || source.starts_with?('/uploads') 
+     "http://frontiersinretreat.org"
+   else
+     "http://localhost:3000"
+   end
+ }
 end

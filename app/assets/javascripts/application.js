@@ -13,7 +13,14 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery.ui.core
-//= require jquery.ui.dialog
-//= require turbolinks
+//= require jquery_dialog_fix
 //= require hiap
 //= require jquery.fancybox.pack
+
+$.ui.dialog.prototype._focusTabbable = $.noop;
+
+// causeRepaintsOn = $("#frontiers_header img, #inretreat_header img");
+// 
+// $(window).resize(function() {
+//   causeRepaintsOn.css("heigh", "92vH");
+// });
