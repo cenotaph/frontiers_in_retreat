@@ -20,6 +20,7 @@
             %li.has-dropdown
               %a{:href=> '#'}= current_user.username
               %ul.dropdown
+                %li= link_to 'User management', admin_users_path
                 %li= link_to 'Sign out', destroy_user_session_path, :method => :delete
           %ul.left
             %li= link_to 'Posts', admin_posts_path

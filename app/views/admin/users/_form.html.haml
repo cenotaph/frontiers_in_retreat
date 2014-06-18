@@ -1,0 +1,11 @@
+= semantic_form_for([:admin, @user]) do |f|
+  .row
+    .small-6.columns= f.input :username
+  .row
+    .small-6.columns= f.input :email
+  .row
+    .small-6.columns= f.input :site, :label => "from which partner?", :hint => "Optional"
+  .row
+    .small-6.columns= f.input :approved, :hint => "Users will not be able to access the CMS unless they are approved by another user."
+  .row
+    .small-6.columns= f.submit 'Save'
