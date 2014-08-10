@@ -64,13 +64,7 @@ function siteDialog(url, id, lat, lng) {
         }).dialog('open');
         
         $('#' + id + "_menu").css('color', 'red');
-        $('.ui-dialog-titlebar button').click(function() {
-          //$('#' + id + "_menu").css('color', '#000');
 
-          //$('#main_menu a').css('color', "#000");
-          // $("#" + id).remove();
-          clearAllMarkers();          
-        });
        $('.ui-dialog.white').on('click', function( event, ui ) { 
          $(this).css('z-index', parseInt($(this).css( "z-index" )) + 10); } ); 
       
