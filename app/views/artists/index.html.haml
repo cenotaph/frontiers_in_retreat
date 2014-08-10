@@ -4,4 +4,4 @@
   %p
     %ul.artists
       - @artists.each do |artist|
-        %li= link_to raw("&#x2192;") + artist.name, '#', :onClick => "siteDialog('#{artist_path(artist.id)}', 'artist_#{artist.id}');return false;"  
+        %li= link_to raw("&#x2192;") + artist.name, '#', :onClick => "siteDialog('#{artist_path(artist.id)}', 'artist_#{artist.id}', 0, 0);return false;"  

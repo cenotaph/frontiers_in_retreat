@@ -8,23 +8,23 @@
 
   - unless @site.website.blank?
     .link= link_to raw("&#x2192;Link to website"), @site.website, :target => :_blank
-:javascript
-  var hoverImage = {
-        url: "/assets/red_dot.png",
-        size: new google.maps.Size(24, 24),
-        scaledSize: new google.maps.Size(24, 24),
-        anchor: new google.maps.Point(8, 8)
-      };
-  var mypos = new google.maps.LatLng(#{@site.latitude}, #{@site.longitude});
-  $.each(allMarkers, function(m, marker) {
-    
-    if (marker.position.lat() == #{@site.latitude}) {
-      marker.setIcon(hoverImage);
-      google.maps.event.addListener(marker, 'mouseout', function() {
-          marker.setIcon(hoverImage);
-      });
-    }
-  });
+/ :javascript
+/   var hoverImage = {
+/         url: "/assets/red_dot.png",
+/         size: new google.maps.Size(24, 24),
+/         scaledSize: new google.maps.Size(24, 24),
+/         anchor: new google.maps.Point(8, 8)
+/       };
+/   var mypos = new google.maps.LatLng(#{@site.latitude}, #{@site.longitude});
+/   $.each(allMarkers, function(m, marker) {
+/
+/     if (marker.position.lat() == #{@site.latitude}) {
+/       marker.setIcon(hoverImage);
+/       google.maps.event.addListener(marker, 'mouseout', function() {
+/           marker.setIcon(hoverImage);
+/       });
+/     }
+/   });
 = content_for :aftermap do
   :plain
     map.panTo(new google.maps.LatLng(#{@site.latitude}, #{@site.longitude}));

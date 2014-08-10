@@ -4,12 +4,12 @@
   %p 
     - lead = @sites.where(:lead => true).first
     Frontiers in Retreat is organised by
-    = link_to raw("&#x2192;") + lead.name, '#', :onclick => "siteDialog('#{site_path(lead.slug)}', '#{lead.slug}');map.panTo(new google.maps.LatLng(#{lead.latitude}, #{lead.longitude})); return false;"
+    = link_to raw("&#x2192;") + lead.name, '#', :onclick => "siteDialog('#{site_path(lead.slug)}', '#{lead.slug}', #{lead.latitude}, #{lead.longitude}); return false;"
     in partnership with the following art organisations:
   
   %p
     %ul.sites
       - @sites.where("lead is not true").sort_by(&:name).each do |site|
-        %li= link_to raw("&#x2192;") + site.name, '#', :onClick => "siteDialog('#{site_path(site.slug)}', '#{site.slug}'); map.panTo(new google.maps.LatLng(#{site.latitude}, #{site.longitude}));clearAllMarkers(); return false;"
+        %li= link_to raw("&#x2192;") + site.name, '#', :onClick => "siteDialog('#{site_path(site.slug)}', '#{site.slug}',#{site.latitude}, #{site.longitude});clearAllMarkers(); return false;"
 
       
