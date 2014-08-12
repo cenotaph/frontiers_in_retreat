@@ -85,7 +85,7 @@
             marker.setIcon(baseImage);
         });
         google.maps.event.addListener(marker, 'click', function() {
-          siteDialog(point.href, point.slug);
+          siteDialog(point.href, point.slug, point.lat, point.lng);
 
           $.each(allMarkers, function(m, mm) {
             if (mm == marker) {
