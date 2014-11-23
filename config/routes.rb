@@ -61,6 +61,7 @@ Rails.application.routes.draw do
     resources :artists
     resources :pages
     resources :posts
+    resources :residencies
     resources :sites
     resources :users
   end

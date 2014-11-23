@@ -69,8 +69,12 @@ $include-html-global-classes: false;
   label.label {
     background-color: #DBDBDB;
     color: $primary-color;
-    font-weight: bold;
+    font-weight: 300;
     font-size: 0.9em;
     border: 1px solid $primary-color;
+    &.error {
+      color: red;
+      font-weight: bold;
+    }
   }
 }

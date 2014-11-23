@@ -1,0 +1,21 @@
+.row
+  .small-12.columns
+    %h2 Residency
+    
+= semantic_form_for [:admin, @residency], html: {:"data-abide" => ''} do |f|
+  .row
+    .small-6.columns= f.input :site,  input_html: {required: ''}
+  .row
+    .small-6.columns= f.input :artist, input_html: {required: ''}
+  .row
+  .row
+    .small-6.columns
+      = f.input :start_at, :as => :string, :input_html => {:class => "date_picker", required: ''}
+    .small-6.columns
+      = f.input :end_at, :as => :string, :input_html => {:class => "date_picker", required: ''}
+  .row
+  .row
+    .small-12.columns
+      %label.label Description
+      = f.cktext_area :description
+    .small-12.columns= f.submit 'Save', class: [:button, :round]

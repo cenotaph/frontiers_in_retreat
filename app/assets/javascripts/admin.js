@@ -23,4 +23,7 @@ $(function(){ $(document).foundation();
   $('.datetime_picker').fdatetimepicker({
       format: 'yyyy-mm-dd hh:ii'
   });
+  $('.date_picker').fdatetimepicker({
+      format: 'yyyy-mm-dd'
+  });
 });
