@@ -50,7 +50,8 @@ gem 'capistrano-bundler'
 gem 'capistrano3-puma', github: "seuros/capistrano-puma"
 
 gem 'carrierwave'
-gem 'ckeditor', :git => 'https://github.com/galetahub/ckeditor.git'
+gem 'chosen-rails'
+gem 'ckeditor'
 gem 'country_select'
 gem 'devise'
 gem 'figaro'

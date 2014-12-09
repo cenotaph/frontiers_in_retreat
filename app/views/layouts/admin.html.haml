@@ -27,9 +27,14 @@
             %li= link_to 'Static pages', admin_pages_path
             %li= link_to 'Artists', admin_artists_path
             %li= link_to 'Residencies', admin_residencies_path
+            %li= link_to 'Events', admin_events_path
             %li= link_to 'Sites', admin_sites_path
           %ul.right
             %li= link_to 'Public site', '/'  
             
     = yield 
     = javascript_include_tag "admin" 
+    :javascript
+      $(document).ready(function() {
+        #{yield :jquery}
+      });

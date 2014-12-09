@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141122194807) do
+ActiveRecord::Schema.define(version: 20141209085308) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,6 +43,35 @@ ActiveRecord::Schema.define(version: 20141122194807) do
 
   add_index "ckeditor_assets", ["assetable_type", "assetable_id"], name: "idx_ckeditor_assetable", using: :btree
   add_index "ckeditor_assets", ["assetable_type", "type", "assetable_id"], name: "idx_ckeditor_assetable_type", using: :btree
+
+  create_table "events", force: true do |t|
+    t.integer  "site_id"
+    t.datetime "start_at"
+    t.datetime "end_at"
+    t.string   "name"
+    t.string   "image"
+    t.integer  "image_size"
+    t.integer  "image_width"
+    t.integer  "image_height"
+    t.string   "image_content_type"
+    t.string   "facebook_link"
+    t.text     "description"
+    t.string   "external_link"
+    t.boolean  "published"
+    t.string   "slug"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "project_id"
+  end
+
+  add_index "events", ["site_id"], name: "index_events_on_site_id", using: :btree
+
+  create_table "events_residencies", id: false, force: true do |t|
+    t.integer "event_id"
+    t.integer "residency_id"
+  end
+
+  add_index "events_residencies", ["event_id", "residency_id"], name: "index_events_residencies_on_event_id_and_residency_id", using: :btree
 
   create_table "images", force: true do |t|
     t.string   "image"
@@ -81,6 +110,22 @@ ActiveRecord::Schema.define(version: 20141122194807) do
   end
 
   add_index "posts", ["user_id"], name: "index_posts_on_user_id", using: :btree
+
+  create_table "projects", force: true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.string   "slug"
+    t.string   "weblink"
+    t.date     "start_at"
+    t.date     "end_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "projects_residencies", id: false, force: true do |t|
+    t.integer "project_id"
+    t.integer "residency_id"
+  end
 
   create_table "residencies", force: true do |t|
     t.integer  "artist_id",   null: false

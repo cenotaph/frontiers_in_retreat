@@ -1,0 +1,32 @@
+.row
+  .small-12.columns
+    %h2 Events
+.row
+  .small-12.columns= link_to 'New event', new_admin_event_path, :class => [:button, :round]
+.row
+  .small-12.columns
+    %table
+      %thead
+        %th Site
+        %th Name
+        %th When? 
+        %th Actions
+      %tbody
+        - @events.each do |e|
+          %tr
+            %td
+              = e.site.name unless e.site.blank?
+              - unless e.residencies.empty?
+                %p.metadata
+                  - e.residencies.each do |res|
+                    = res.name
+            %td= e.name
+            %td
+              = date_range(e.start_at, e.end_at)
+            %td.actions
+              = link_to 'Edit', edit_admin_event_path(e), :class => [:button, :round, :tiny]
+              = link_to 'Delete', [:admin, e], :method => :delete, :class => [:button, :round, :tiny, :alert], :data => {:confirm => 'Are you sure you want to delete this forever?'}
+.row
+  .small-12.columns= link_to 'New event', new_admin_event_path, :class => [:button, :round]
+          
+          

@@ -1,0 +1,41 @@
+.row
+  .small-12.columns
+    %h2 Event
+    
+= semantic_form_for [:admin, @event], html: {:"data-abide" => ''} do |f|
+  .row
+    .small-6.columns= f.input :site
+  .row
+    .small-6.columns= f.input :name, input_html: {required: ''}
+  .row
+  .row
+    .small-6.columns
+      = f.input :start_at, :as => :string, :input_html => {:class => "date_picker", required: ''}
+    .small-6.columns
+      = f.input :end_at, :as => :string, :input_html => {:class => "date_picker", required: ''}
+  .row
+    .small-12.columns
+      %label.label Description
+      = f.cktext_area :description
+  .row
+    .small-12.columns
+      - if f.object.image?
+        = image_tag f.object.image.url(:small)
+      = f.input :image
+  .row
+    .small-12.columns= f.input :facebook_link
+  
+  .row
+    .small-12.columns= f.input :external_link
+  .row
+    .small-12.columns
+      = f.input :residencies, label: 'Residencies associated with this event?', as: :select, collection: Residency.all.order(:start_at), input_html: {class: 'chosen-select'}
+    
+  .row
+    .small-12.columns
+      = f.input :published
+  .row
+    .small-12.columns= f.submit 'Save', class: [:button, :round]
+= content_for :jquery do
+  :plain
+    $('#event_residency_ids').chosen();    

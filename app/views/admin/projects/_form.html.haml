@@ -1,0 +1,39 @@
+.row
+  .small-12.columns
+    %h2 Project
+    
+= semantic_nested_form_for [:admin, @project], html: {:"data-abide" => ''} do |f|
+  .row
+    .small-6.columns= f.input :name, input_html: {required: ''}
+  .row
+  .row
+    .small-6.columns
+      = f.input :start_at, :as => :string, :input_html => {:class => "date_picker", required: ''}
+    .small-6.columns
+      = f.input :end_at, :as => :string, :input_html => {:class => "date_picker"}
+  .row
+    .small-12.columns
+      %label.label Description of project
+      = f.cktext_area :description
+
+  .row
+    .small-8.columns= f.input :weblink, label: 'Link to external website: '
+
+  .row
+    .small-12.columns
+      = f.input :residencies, label: 'Which residencies are part of this project?', as: :select, collection: Residency.all.order(:start_at), input_html: {class: 'chosen-select'}, hint: 'Artists will be selected automatically through their residencies'
+  .row
+    = f.fields_for :images do |ff|
+      .small-12.columns
+        - if ff.object.image?
+          = image_tag ff.object.image.url(:small)
+          Change image?
+        = ff.input :image
+        = ff.link_to_remove 'Remove image'
+  .row
+    .small-5.columns= f.link_to_add 'Add an image to this project', :images
+  .row
+    .small-12.columns= f.submit 'Save', class: [:button, :round]
+= content_for :jquery do
+  :plain
+    $('#project_residency_ids').chosen();    

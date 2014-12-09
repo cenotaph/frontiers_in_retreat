@@ -59,8 +59,10 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :artists
+    resources :events
     resources :pages
     resources :posts
+    resources :projects
     resources :residencies
     resources :sites
     resources :users
