@@ -11,24 +11,9 @@
     = csrf_meta_tags 
   %body
     #frontiers_header= image_tag 'frontiers_800.png'
-    /   .letter F
-    /   .letter R
-    /   .letter O
-    /   .letter N
-    /   .letter T
-    /   .letter I
-    /   .letter E
-    /   .letter R
-    /   .letter S
+
     #inretreat_header= image_tag 'in_retreat_800.png'
-    /   .letter_in IN
-    /   .letter R
-    /   .letter E
-    /   .letter T
-    /   .letter R
-    /   .letter E
-    /   .letter A
-    /   .letter T
+
     #main_menu
       %ul
         %li= link_to 'News', '#', :id => "news_menu", :onclick => "toggleDialog('#{posts_path}', 'news');  return false;"
