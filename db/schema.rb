@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141209085308) do
+ActiveRecord::Schema.define(version: 20150118132110) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -72,6 +72,22 @@ ActiveRecord::Schema.define(version: 20141209085308) do
   end
 
   add_index "events_residencies", ["event_id", "residency_id"], name: "index_events_residencies_on_event_id_and_residency_id", using: :btree
+
+  create_table "feeds", force: true do |t|
+    t.integer  "item_id"
+    t.string   "item_type"
+    t.text     "content"
+    t.datetime "timestamp"
+    t.boolean  "hidden"
+    t.string   "link_url"
+    t.string   "source"
+    t.string   "title"
+    t.integer  "twitter_id", limit: 8
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "feeds", ["item_id", "item_type"], name: "index_feeds_on_item_id_and_item_type", using: :btree
 
   create_table "images", force: true do |t|
     t.string   "image"

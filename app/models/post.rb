@@ -3,12 +3,12 @@ class Post < ActiveRecord::Base
   has_many :images, as: :item
   paginates_per 3
   validates_presence_of :title, :body, :user_id
-  
+  include Feedable
   before_save :check_published_at
   extend FriendlyId
   friendly_id :title, use: [:slugged, :finders]
-  
-  
+  attr_accessor :hide_from_feed
+  has_one :feed, as: :item
   accepts_nested_attributes_for :images, :reject_if => proc {|x| x['image'].blank? }, :allow_destroy => true
     
   scope :published, -> { where(published: true).order('published_at DESC') }
@@ -16,7 +16,20 @@ class Post < ActiveRecord::Base
   def check_published_at
     if self.published == true && self.published_at.blank?
       self.published_at ||= Time.now
+      self.check_for_feed
     end
+  end
+  
+  def feed_title
+    title
+  end
+  
+  def feed_time
+    published_at
+  end
+  
+  def feed_url
+    "/posts/#{slug}"
   end
   
 end

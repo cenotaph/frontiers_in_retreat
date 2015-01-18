@@ -16,6 +16,7 @@
 //= require jquery_dialog_fix
 //= require hiap
 //= require jquery.fancybox.pack
+//= require jquery-collision.min
 
 $.ui.dialog.prototype._focusTabbable = $.noop;
 

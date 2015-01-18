@@ -152,7 +152,7 @@
   }
 }
 
-.site, .artist {
+.site, .artist, #feed {
   h4 {
     text-transform: uppercase;
     color: black;
@@ -290,3 +290,39 @@
   }
 }  
   
+  
+#twitter {
+  .var-chromeless .tweet {
+    padding-left: 0px !important;
+  }
+}
+
+#feed {
+  z-index: 998;
+  ul {
+    padding: 0px; 
+    margin: 0px;
+    li {
+      list-style-type: none;
+      &.tweet, &.feed_post {
+        a.twitter_link, a.title_link { 
+          float: left;
+          font-size: 0.8rem;
+        }
+        span.date {
+          color: #666;
+          font-size: 0.7rem;
+          padding-left: 0.6rem;
+        }
+        p, .content, em, strong {
+          margin: 0px 0px 1rem 0;
+          font-size: 0.8rem;
+          line-height: 1rem;
+          a {
+            font-size: 0.8rem;
+          }
+        }
+      }
+    }
+  }
+}
