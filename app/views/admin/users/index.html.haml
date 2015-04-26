@@ -5,11 +5,11 @@
   .small-12.columns
     %table
       %thead
-        %th ID
-        %th Username 
+        %th= sortable_column "ID"
+        %th= sortable_column  "Username" 
         %th Location
-        %th Email
-        %th Approved?
+        %th= sortable_column  "Email"
+        %th= sortable_column  "Approved"
         %th Actions
       %tbody
         - @users.each do |user|
@@ -22,7 +22,4 @@
             %td.actions
               = link_to 'Edit', edit_admin_user_path(user), :class => [:button, :round, :tiny]
               = link_to 'Delete', [:admin, user], :method => :delete, :class => [:button, :round, :tiny, :alert], :data => {:confirm => 'Are you sure you want to delete this person forever?'}
-.row
-  .small-12.columns= link_to 'New user', new_admin_user_path, :class => [:button, :round]
-          
-          
+ 

@@ -1,11 +1,11 @@
-= semantic_form_for([:admin, @user]) do |f|
+= semantic_form_for([:admin, @user], html: {:"data-abide" => ''} ) do |f|
   .row
-    .small-6.columns= f.input :username
+    .small-6.columns= f.input :username, input_html: {required: ''}
   .row
-    .small-6.columns= f.input :email
+    .small-6.columns= f.input :email, input_html: {required: ''}
   .row
-    .small-6.columns= f.input :site, :label => "from which partner?", :hint => "Optional"
+    .small-6.columns= f.input :site, :label => "from which partner?", input_html: {required: ''}
   .row
     .small-6.columns= f.input :approved, :hint => "Users will not be able to access the CMS unless they are approved by another user."
   .row
-    .small-6.columns= f.submit 'Save'
+    .small-6.columns= f.submit 'Save', class: [:button, :round]
