@@ -1,7 +1,6 @@
-class PostsController < InheritedResources::Base
+class PostsController < ApplicationController
   has_scope :page, :default => 1
-  actions :index, :show
-  
+
   def index
     @posts = Post.published.order('published_at DESC').page(params[:page])
     render :layout => false

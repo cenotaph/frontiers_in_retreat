@@ -1,23 +1,31 @@
 .row
   .small-12.columns
     %h2 Posts
+
+.row
+  .small-12.columns= link_to 'New post', new_admin_post_path, :class => [:button, :round, :tiny]
+     
+         
 .row
   .small-12.columns
     %table
       %thead
-        %th Date
-        %th Title 
-        %th Public?
+        %th= sortable_column "Date"
+        %th= sortable_column "Title" 
+        %th= sortable_column "Published?", column: :published
         %th Actions
       %tbody
         - @posts.each do |post|
           %tr
-            %td=l post.published ?  post.published_at : post.created_at, :format => :short
+            %td=l post.published ?  post.published_at : post.created_at, :format => :long
             %td= post.title
             %td= post.published == true ? 'yes' : 'no'
             %td.actions
               = link_to 'Edit', edit_admin_post_path(post), :class => [:button, :round, :tiny]
               = link_to 'Delete', [:admin, post], :method => :delete, :class => [:button, :round, :tiny, :alert], :data => {:confirm => 'Are you sure you want to delete this forever?'}
+.row
+  .small-12.columns= paginate @posts
+  
 .row
   .small-12.columns= link_to 'New post', new_admin_post_path, :class => [:button, :round]
           

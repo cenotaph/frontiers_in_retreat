@@ -7,15 +7,16 @@
   .small-12.columns
     %table
       %thead
-        %th Site
-        %th Name
-        %th When? 
+
+        %th= sortable_column "Name"
+        %th Artists
+        %th= sortable_column "When?", column: :when 
         %th Actions
       %tbody
         - @projects.each do |p|
           %tr
-            %td= p.artists
             %td= p.name
+            %td= p.artists
             %td
               = date_range(p.start_at, p.end_at)
             %td.actions
