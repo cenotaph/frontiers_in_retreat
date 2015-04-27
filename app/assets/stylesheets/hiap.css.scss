@@ -196,7 +196,9 @@
   }
 
 }
-.post {
+
+
+.post, .blog {
   border-top: 2px solid #000;
   padding: 20px 0px 0px 0px;
   &.post0 {
@@ -227,6 +229,40 @@
     line-height: 1.42em;
     p {
       margin-bottom: 5px;
+    }
+  }
+}
+
+.blog {
+  .occluded {
+    display: none;
+  }
+  .body, .body p {
+    margin-top: 0;
+    padding-bottom: 0;
+  }
+  .info {
+    border-top: none;
+    margin-bottom: 1rem;
+    padding: 0;
+  }
+  .title {
+    a {
+      color: #4000FF;
+    }
+  }
+  .author {
+    text-transform: uppercase;
+    color: black;
+    margin: 0;
+    font-size: 19px;
+    line-height: 1.42em;
+
+    font-weight: normal;
+    font-family: Helvetica, Arial, sans-serif;
+    span.date {
+      color: #999;
+      text-transform: none;
     }
   }
 }

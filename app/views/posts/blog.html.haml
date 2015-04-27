@@ -1,0 +1,3 @@
+- @posts.each_with_index do |post, i|
+  .blog{:class => "post#{i}" }= render :partial => 'blog', :locals => {:post => post}
+= paginate @posts, :remote => true

@@ -20,6 +20,7 @@
         %li= link_to 'About', '#', :id => "about_menu", :onclick => "toggleDialog('#{page_path(:about)}', 'about'); return false;"
         %li= link_to 'Sites', '#', :id => "siteindex_menu", :onclick => "siteDialog('#{sites_path}', 'siteindex'); return false;"
         %li= link_to 'Artists', '#', :id => "artistindex_menu", :onclick => "siteDialog('#{artists_path}', 'artistindex'); return false;"
+        %li= link_to 'Blog', '#', :id => "blogindex_menu", onclick: "toggleDialog('/blog', 'blogindex'); return false;"
         -# %li= link_to 'Projects', '#'        
         -# %li= link_to 'Archive', '#'
         -# %li= link_to 'Glossary', '#'

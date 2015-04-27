@@ -6,6 +6,8 @@
   .row
     .small-6.columns= f.input :site, :label => "from which partner?", input_html: {required: ''}
   .row
+    .small-6.columns= f.input :artist, label: 'User is also an artist?'
+  .row
     .small-6.columns= f.input :approved, :hint => "Users will not be able to access the CMS unless they are approved by another user."
   .row
     .small-6.columns= f.submit 'Save', class: [:button, :round]

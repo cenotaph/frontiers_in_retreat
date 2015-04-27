@@ -1,6 +1,8 @@
 class Admin::PostsController < Admin::BaseController
   respond_to :html
   handles_sortable_columns
+  has_scope :news, type: :boolean
+  has_scope :blog, type: :boolean
   
   def create
     @post = Post.create(post_params)
@@ -32,7 +34,7 @@ class Admin::PostsController < Admin::BaseController
         "lower(title) ASC"
       end
     end
-    @posts = Post.all.order(order).page(params[:page]).per(25)
+    @posts = apply_scopes(Post).all.order(order).page(params[:page]).per(25)
     set_meta_tags title: 'Posts'
   end
   
@@ -51,7 +53,7 @@ class Admin::PostsController < Admin::BaseController
   protected
   
   def post_params
-    params.require(:post).permit(:title, :body, :user_id, :published, :slug, :published_at, images_attributes: [:caption, :credit, :image, :id, :_destroy])
+    params.require(:post).permit(:title, :body, :user_id, :published, :blog, :slug, :published_at, images_attributes: [:caption, :credit, :image, :id, :_destroy])
   end
   
 end
