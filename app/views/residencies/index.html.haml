@@ -1,0 +1,12 @@
+.site 
+  %h4 Visiting Artists
+  
+
+  %ul.residencies
+    - @residencies.each do |res|
+      %li
+        .name= res.artist.name
+        .when= date_range(res.start_at, res.end_at)
+        / = link_to raw("&#x2192;") + site.name, '#', :onClick => "siteDialog('#{site_path(site.slug)}', '#{site.slug}',#{site.latitude}, #{site.longitude});clearAllMarkers(); return false;"
+
+      

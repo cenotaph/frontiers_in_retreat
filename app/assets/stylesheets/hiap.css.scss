@@ -156,12 +156,31 @@
   h4 {
     text-transform: uppercase;
     color: black;
-    margin: 0px 0px 10px 0px;
+    margin: 0 0 1.1rem 0;
     font-size: 19px;
     line-height: 1.42em;
-    margin-bottom: 1.1em;
+
     font-weight: normal;
     font-family: Helvetica, Arial, sans-serif;
+  }
+  ul.residencies {
+    padding: 0;
+    li {
+      list-style-type: none;
+      color: black;
+      font-size: 19px;
+      line-height: 1.42em;
+      margin: 0;
+      font-weight: normal;
+      font-family: Helvetica, Arial, sans-serif;
+      .name {
+        float: left;
+        margin-right: 0.4rem;
+      }
+      .when {
+        color: #999;
+      }
+    }
   }
   .body {
     font-size: 19px;
@@ -316,10 +335,10 @@
         }
         p, .content, em, strong {
           margin: 0px 0px 1rem 0;
-          font-size: 0.8rem;
-          line-height: 1rem;
+          font-size: 0.7rem;
+          line-height: 0.9rem;
           a {
-            font-size: 0.8rem;
+            font-size: 0.7rem;
           }
         }
       }

@@ -10,7 +10,9 @@ Rails.application.routes.draw do
   resources :artists
   resources :pages
   resources :posts
-  resources :sites
+  resources :sites do
+    resources :residencies
+  end
 
   get '/admin' => 'admin/posts#index'
 

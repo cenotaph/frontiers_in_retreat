@@ -8,6 +8,8 @@
 
   - unless @site.website.blank?
     .link= link_to raw("&#x2192;Link to website"), @site.website, :target => :_blank
+  - unless @site.residencies.blank?
+    .link_to= link_to raw("&#x2192;Visiting artists"), '#', onclick: "thirdDialog('#{site_residencies_path(@site)}', 'site_residencies_#{@site.id}', '#{@site.slug}'); return false;"
 / :javascript
 /   var hoverImage = {
 /         url: "/assets/red_dot.png",
