@@ -4,3 +4,5 @@
   .body= raw @artist.bio
   - unless @artist.website.blank?
     = link_to raw("&#x2192;Link to website"), @artist.website, :target => :_blank
+  - unless @artist.residencies.blank?
+    .link_to= link_to raw("&#x2192;Visited sites"), '#', onclick: "thirdDialog('#{artist_residencies_path(@artist)}', 'artist_residencies_#{@artist.id}', 'artist_#{@artist.id.to_s}'); return false;"    

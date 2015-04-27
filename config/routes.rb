@@ -7,7 +7,9 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   root 'application#home'
-  resources :artists
+  resources :artists do
+    resources :residencies
+  end
   resources :pages
   resources :posts
   resources :sites do

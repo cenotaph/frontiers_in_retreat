@@ -3,7 +3,7 @@ class Artist < ActiveRecord::Base
   friendly_id :name, use: [:slugged, :finders]
   validates_presence_of :surname
   scope :visible, -> { where(visible: true)}
-  
+  has_many :residencies
   
   def name
     [firstname.blank? ? nil : firstname, surname].compact.join(' ')
