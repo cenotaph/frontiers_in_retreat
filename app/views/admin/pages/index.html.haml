@@ -2,12 +2,15 @@
   .small-12.columns
     %h2 Static page content
 .row
+  .small-12.columns= link_to 'New page', new_admin_page_path, :class => [:button, :round, :tiny ]
+  
+.row
   .small-12.columns
     %table
       %thead
-        %th ID
-        %th Title 
-        %th Public?
+        %th= sortable_column "ID"
+        %th= sortable_column "Title" 
+        %th= sortable_column "Public?", column: :published
         %th Actions
       %tbody
         - @pages.each do |page|

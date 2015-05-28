@@ -1,3 +1,32 @@
+function thirdDialog(url, id, parent) {
+  var tag = $("<div id=" + id + "></div>");
+
+  if ($("#" +id).dialog( "isOpen" )===true) {
+    $("#" +id).dialog("close");
+    $("#" + id).remove();
+
+  } else {
+    $.ajax({
+      url: url,
+      success: function(data) {
+        tag.html(data).dialog({modal: false, width: '18em', stack: true, draggable: true, width: '24rem',  dialogClass: 'grey', resizable: false, maxHeight: 700, position: { my: "left top", at: "left-20 top+30", of: '#' + parent},       
+        close:     function(event, ui) {  
+          $("#" + id).remove();
+          $('#' + id + "_menu").css('color', '#000');     
+        },
+        open: function(event,ui) {
+          $('#' + id + "_menu").css('color', 'red');   
+        }
+      }).dialog('open');
+
+      $('.ui-dialog.white').on('click', function( event, ui ) { 
+
+        $(this).css('z-index', parseInt($(this).css( "z-index" )) + 10); });
+      }
+    });  
+  }
+}
+
 
 function toggleDialog(url, id) {
   var tag = $("<div id=" + id + "></div>");
@@ -9,12 +38,7 @@ function toggleDialog(url, id) {
   if ($("#" +id).dialog( "isOpen" )===true) {
     $("#" +id).dialog("close");
     $("#" + id).remove();
-    //$('#' + id + "_menu").css('color', '#000');
-   //  $('#' + id + "_menu").hover(function() {
-   //        $(this).css('color', 'red');
-   //     },  function() {
-   //    $(this).css('color', '#000');
-   // });
+
   } else {
     $.ajax({
       url: url,

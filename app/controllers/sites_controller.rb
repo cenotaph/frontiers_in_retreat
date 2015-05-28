@@ -1,5 +1,5 @@
-class SitesController < InheritedResources::Base
-  actions :index, :show
+class SitesController < ApplicationController
+ 
   
   def index
     @sites = Site.current

@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
@@ -11,12 +12,14 @@ class ApplicationController < ActionController::Base
   end
   
   def home
-    
+    @feed = Feed.page(params[:page]).per(5)
   end
   
   def static
     render :layout => false
   end
+  
+  
   protected
 
   def configure_permitted_parameters

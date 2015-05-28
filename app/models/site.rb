@@ -7,6 +7,7 @@ class Site < ActiveRecord::Base
   scope :current, -> { where(current: true)}
   mount_uploader :image, ImageUploader
   before_save :update_image_attributes
+  has_many :residencies 
   
   def update_image_attributes
     if image.present?

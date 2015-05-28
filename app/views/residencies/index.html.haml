@@ -1,0 +1,21 @@
+
+.site 
+  - if @site
+    %h4 Visiting Artists
+  
+
+    %ul.residencies
+      - @residencies.each do |res|
+        %li
+          .name= res.artist.name
+          .when= date_range(res.start_at, res.end_at)
+  - elsif @artist
+    %h4 Visited Sites
+  
+
+    %ul.residencies
+      - @residencies.each do |res|
+        %li
+          .name= res.site.name
+          .when= date_range(res.start_at, res.end_at)
+

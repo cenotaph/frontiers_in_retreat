@@ -3,7 +3,7 @@
   %head
     %meta{:charset => "utf-8"}/
     %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/
-    %title= content_for?(:title) ? yield(:title) : "frontiers CMS" 
+    = display_meta_tags site: 'frontiers CMS'
     = stylesheet_link_tag    "admin" 
     = javascript_include_tag "vendor/modernizr" 
     = csrf_meta_tags 
@@ -23,7 +23,8 @@
                 %li= link_to 'User management', admin_users_path
                 %li= link_to 'Sign out', destroy_user_session_path, :method => :delete
           %ul.left
-            %li= link_to 'Posts', admin_posts_path
+            %li= link_to 'News', admin_posts_path(news: true)
+            %li= link_to 'Blog', admin_posts_path(blog: true)
             %li= link_to 'Static pages', admin_pages_path
             %li= link_to 'Artists', admin_artists_path
             %li= link_to 'Residencies', admin_residencies_path

@@ -1,6 +1,5 @@
-class ArtistsController < InheritedResources::Base
-  actions :index, :show
-  
+class ArtistsController < ApplicationController
+ 
   def index
     @artists = Artist.visible.sort_by(&:sortkey)
     render :layout => false

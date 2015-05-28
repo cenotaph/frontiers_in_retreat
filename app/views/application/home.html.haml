@@ -1,0 +1,31 @@
+.post#feed  
+  %h4 Latest
+  %ul
+    - @feed.each do |feed_item|
+      - if feed_item.source == "twitter"
+        %li.tweet
+          = link_to feed_item.title, feed_item.link_url, target: :_blank, class: :twitter_link
+          %span.date= time_ago_in_words(feed_item.timestamp) + " ago"
+          = auto_html(feed_item.content) { simple_format; hashtag; twitter; link(:target => 'blank') }
+          -#.content= raw feed_item.content
+      - elsif feed_item.item_type == "Post"
+        %li.feed_post
+          = link_to feed_item.title, feed_item.link_url, class: :title_link
+          %span.date= time_ago_in_words(feed_item.timestamp) + " ago"
+          .content= truncate_html(sanitize(feed_item.item.body, tags: %w{bold strong b i em italic underline u}), length: 140)
+  = paginate @feed
+  / %a.twitter-timeline{"data-dnt" => "true", "data-widget-id" => "555443242825949184", :"data-chrome" => "nofooter transparent noborders", :href => "https://twitter.com/hashtag/FrontiersInRetreat"} #FrontiersInRetreat Tweets
+  / :javascript
+  /   !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+= content_for :jquery do
+  :plain
+    $("#feed").dialog({modal: true, width: '16rem', draggable: true, stack: true, height: 'auto', maxHeight: $(window).height(), resizable: false, position: {  my: "left top", at: "left+" + (10 + (10 * ($('.sitewindow').length - 1))) + " bottom+" + (80 + (10 * ($('.sitewindow').length - 1))), of: '#main_menu'},      
+       open: function(event, ui) {
+         if ($('#main_menu').collision('#feed').length > 0) {
+           $('#feed').dialog({position: { my: 'right top', at: 'left-80 top', of: '#inretreat_header' } });
+         }
+       },
+        close:     function(event, ui) {  
+          $("#" + id).remove();
+        }}).dialog('open');
+    $('.ui-dialog[aria-describedby=feed]').css('z-index', '998');

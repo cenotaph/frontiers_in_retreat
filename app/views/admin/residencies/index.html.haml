@@ -2,14 +2,14 @@
   .small-12.columns
     %h2 Residencies
 .row
-  .small-12.columns= link_to 'New residency', new_admin_residency_path, :class => [:button, :round]
+  .small-12.columns= link_to 'New residency', new_admin_residency_path, :class => [:button, :round, :tiny]
 .row
   .small-12.columns
     %table
       %thead
-        %th Site
-        %th Artist
-        %th When? 
+        %th=sortable_column "Site"
+        %th= sortable_column "Artist"
+        %th= sortable_column "When?", column: :when 
         %th Actions
       %tbody
         - @residencies.each do |res|
@@ -23,6 +23,8 @@
             %td.actions
               = link_to 'Edit', edit_admin_residency_path(res), :class => [:button, :round, :tiny]
               = link_to 'Delete', [:admin, res], :method => :delete, :class => [:button, :round, :tiny, :alert], :data => {:confirm => 'Are you sure you want to delete this forever?'}
+.row
+  .small-12.columns= paginate @residencies
 .row
   .small-12.columns= link_to 'New residency', new_admin_residency_path, :class => [:button, :round]
           

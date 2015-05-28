@@ -152,16 +152,35 @@
   }
 }
 
-.site, .artist {
+.site, .artist, #feed {
   h4 {
     text-transform: uppercase;
     color: black;
-    margin: 0px 0px 10px 0px;
+    margin: 0 0 1.1rem 0;
     font-size: 19px;
     line-height: 1.42em;
-    margin-bottom: 1.1em;
+
     font-weight: normal;
     font-family: Helvetica, Arial, sans-serif;
+  }
+  ul.residencies {
+    padding: 0;
+    li {
+      list-style-type: none;
+      color: black;
+      font-size: 19px;
+      line-height: 1.42em;
+      margin: 0;
+      font-weight: normal;
+      font-family: Helvetica, Arial, sans-serif;
+      .name {
+        float: left;
+        margin-right: 0.4rem;
+      }
+      .when {
+        color: #999;
+      }
+    }
   }
   .body {
     font-size: 19px;
@@ -177,7 +196,9 @@
   }
 
 }
-.post {
+
+
+.post, .blog {
   border-top: 2px solid #000;
   padding: 20px 0px 0px 0px;
   &.post0 {
@@ -208,6 +229,40 @@
     line-height: 1.42em;
     p {
       margin-bottom: 5px;
+    }
+  }
+}
+
+.blog {
+  .occluded {
+    display: none;
+  }
+  .body, .body p {
+    margin-top: 0;
+    padding-bottom: 0;
+  }
+  .info {
+    border-top: none;
+    margin-bottom: 1rem;
+    padding: 0;
+  }
+  .title {
+    a {
+      color: #4000FF;
+    }
+  }
+  .author {
+    text-transform: uppercase;
+    color: black;
+    margin: 0;
+    font-size: 19px;
+    line-height: 1.42em;
+
+    font-weight: normal;
+    font-family: Helvetica, Arial, sans-serif;
+    span.date {
+      color: #999;
+      text-transform: none;
     }
   }
 }
@@ -290,3 +345,39 @@
   }
 }  
   
+  
+#twitter {
+  .var-chromeless .tweet {
+    padding-left: 0px !important;
+  }
+}
+
+#feed {
+  z-index: 998;
+  ul {
+    padding: 0px; 
+    margin: 0px;
+    li {
+      list-style-type: none;
+      &.tweet, &.feed_post {
+        a.twitter_link, a.title_link { 
+          float: left;
+          font-size: 0.8rem;
+        }
+        span.date {
+          color: #666;
+          font-size: 0.7rem;
+          padding-left: 0.6rem;
+        }
+        p, .content, em, strong {
+          margin: 0px 0px 1rem 0;
+          font-size: 0.7rem;
+          line-height: 0.9rem;
+          a {
+            font-size: 0.7rem;
+          }
+        }
+      }
+    }
+  }
+}
