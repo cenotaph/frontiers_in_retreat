@@ -19,7 +19,7 @@
   /   !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
 = content_for :jquery do
   :plain
-    $("#feed").dialog({modal: true, width: '16rem', draggable: true, stack: true, height: 'auto', maxHeight: $(window).height(), resizable: false, position: {  my: "left top", at: "left+" + (10 + (10 * ($('.sitewindow').length - 1))) + " bottom+" + (80 + (10 * ($('.sitewindow').length - 1))), of: '#main_menu'},      
+    $("#feed").dialog({modal: true, width: '17rem', draggable: true, stack: true, height: 'auto', maxHeight: $(window).height() - 200, resizable: false, position: {  my: "left top", at: "left+" + (10 + (10 * ($('.sitewindow').length - 1))) + " bottom+" + (80 + (10 * ($('.sitewindow').length - 1))), of: '#main_menu'},      
        open: function(event, ui) {
          if ($('#main_menu').collision('#feed').length > 0) {
            $('#feed').dialog({position: { my: 'right top', at: 'left-80 top', of: '#inretreat_header' } });

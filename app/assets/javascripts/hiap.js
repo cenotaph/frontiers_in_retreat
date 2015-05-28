@@ -43,7 +43,7 @@ function toggleDialog(url, id) {
     $.ajax({
       url: url,
       success: function(data) {
-        tag.html(data).dialog({modal: false, width: '32em', stack: true, draggable: true, width: w,  dialogClass: 'white', resizable: false, maxHeight: 700, position: { my: "left top", at: "right+20 top", of: '#main_menu'},       
+        tag.html(data).dialog({modal: false, width: '32em', stack: true, draggable: true, width: w,  dialogClass: 'white', resizable: false, maxHeight: 640, position: { my: "left top", at: "right+20 top", of: '#main_menu'},       
         close:     function(event, ui) {  
           $("#" + id).remove();
           $('#' + id + "_menu").css('color', '#000');     

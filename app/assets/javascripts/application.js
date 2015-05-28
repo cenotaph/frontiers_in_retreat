@@ -12,7 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require jquery.ui.core
+//= require jquery-ui/core
 //= require jquery_dialog_fix
 //= require hiap
 //= require jquery.fancybox.pack

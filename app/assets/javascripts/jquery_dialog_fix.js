@@ -1,9 +1,9 @@
-//= require jquery.ui.core
-//= require jquery.ui.widget
-//= require jquery.ui.button
-//= require jquery.ui.draggable
-//= require jquery.ui.position
-//= require jquery.ui.resizable
+//= require jquery-ui/core
+//= require jquery-ui/widget
+//= require jquery-ui/button
+//= require jquery-ui/draggable
+//= require jquery-ui/position
+//= require jquery-ui/resizable
 
 /*!
  * jQuery UI Dialog 1.10.4
@@ -16,13 +16,13 @@
  * http://api.jqueryui.com/dialog/
  *
  * Depends:
- *	jquery.ui.core.js
- *	jquery.ui.widget.js
- *  jquery.ui.button.js
- *	jquery.ui.draggable.js
- *	jquery.ui.mouse.js
- *	jquery.ui.position.js
- *	jquery.ui.resizable.js
+ *	jquery-ui/core.js
+ *	jquery-ui/widget.js
+ *  jquery-ui/button.js
+ *	jquery-ui/draggable.js
+ *	jquery-ui/mouse.js
+ *	jquery-ui/position.js
+ *	jquery-ui/resizable.js
  */
 (function( $, undefined ) {
 

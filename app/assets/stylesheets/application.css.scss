@@ -11,9 +11,9 @@
  * file per style scope.
  *
  *= require_self
- *= require jquery.ui.core
- *= require jquery.ui.theme
- *= require jquery.ui.dialog
+ *= require jquery-ui/core
+ *= require jquery-ui/theme
+ *= require jquery-ui/dialog
  *= require jquery.fancybox
  *= require hiap
  */
@@ -40,6 +40,9 @@ body { height: 100%; margin: 0; padding: 0; font-family: Helvetica, Arial, sans-
       background-color: #000;
 } /* this will style the thumb, ignoring the track */
  
+.ui-widget-overlay { 
+ display: none;
+}
 
 
 
