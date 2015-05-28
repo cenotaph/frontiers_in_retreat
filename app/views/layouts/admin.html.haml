@@ -25,12 +25,18 @@
           %ul.left
             %li= link_to 'News', admin_posts_path(news: true)
             %li= link_to 'Blog', admin_posts_path(blog: true)
-            %li= link_to 'Static pages', admin_pages_path
-            %li= link_to 'Artists', admin_artists_path
-            %li= link_to 'Residencies', admin_residencies_path
-            %li= link_to 'Events', admin_events_path
-            %li= link_to 'Projects', admin_projects_path
-            %li= link_to 'Sites', admin_sites_path
+            - if can? :manage, Page
+              %li= link_to 'Static pages', admin_pages_path
+            - if can? :manage, Artist
+              %li= link_to 'Artists', admin_artists_path
+            - if can? :manage, Residency
+              %li= link_to 'Residencies', admin_residencies_path
+            - if can? :manage, Event
+              %li= link_to 'Events', admin_events_path
+            - if can? :manage, Project
+              %li= link_to 'Projects', admin_projects_path
+            - if can? :manage, Site
+              %li= link_to 'Sites', admin_sites_path
           %ul.right
             %li= link_to 'Public site', '/'  
             
