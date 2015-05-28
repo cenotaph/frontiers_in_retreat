@@ -6,6 +6,8 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
   belongs_to :site
   belongs_to :artist
+  accepts_nested_attributes_for :roles
+
 
    def active_for_authentication? 
      super && approved? 

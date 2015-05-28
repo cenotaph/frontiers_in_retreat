@@ -9,14 +9,17 @@ gem 'pg'
 
 
 # Use SCSS for stylesheets
-gem 'sass-rails', '~> 4.0.3'
+gem 'sass-rails', '4.0.1'
+gem 'foundation-rails', '5.4.5'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .js.coffee assets and views
 gem 'coffee-rails', '~> 4.0.0'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer',  platforms: :ruby
-
+gem 'sprockets', '2.11.0'
+gem 'compass', '0.12.7' #'~> 1.0.0.alpha.21'
+gem 'compass-rails', '2.0.0' #github: 'Compass/compass-rails', branch: '2-0-stable'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
@@ -57,7 +60,7 @@ gem 'country_select'
 gem 'devise'
 gem 'figaro'
 gem 'formtastic', branch: :master, github: 'justinfrench/formtastic'
-gem 'foundation-rails'
+#gem 'foundation-rails'
 gem 'friendly_id', '~> 5.1.0'
 gem 'geocoder'
 gem 'haml'
