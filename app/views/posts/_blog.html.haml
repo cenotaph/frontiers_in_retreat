@@ -32,3 +32,4 @@
           padding : 0
       });
     .body= raw sanitize(post.body, tags: %w{bold b strong u underline i italic em a img p br})
+    .link= link_to 'Permalink', post

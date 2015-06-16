@@ -362,6 +362,7 @@
       &.tweet, &.feed_post {
         a.twitter_link, a.title_link { 
           float: left;
+          padding-top: 0.2rem;
           font-size: 0.8rem;
         }
         span.date {

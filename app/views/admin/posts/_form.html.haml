@@ -2,9 +2,9 @@
   .small-12.columns
     = semantic_nested_form_for [:admin, @post], :html => {:multipart => true} do |f|
       .row
-        .small-6.columns= f.input :blog, :label => 'Type of post', as: :select, collection: [['News', 0], ['Blog post',1 ]], include_blank: false
+        .small-6.columns= f.input :blog, :label => 'Type of post', as: :select, collection: [current_user.has_role?(:admin) ? ['News', 0] : nil, ['Blog post',1 ] ].compact, include_blank: false
       .row
-        .small-6.columns= f.input :user, :label => 'Post as user:', :include_blank => false
+        .small-6.columns= f.input :user, collection: current_user.has_role?(:admin) ? User.all : [current_user], :label => 'Post as user:', :include_blank => false
       .row
         .small-6.columns= f.input :title
       .row

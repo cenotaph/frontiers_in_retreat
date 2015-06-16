@@ -8,7 +8,7 @@ class Post < ActiveRecord::Base
   extend FriendlyId
   friendly_id :title, use: [:slugged, :finders]
   attr_accessor :hide_from_feed
-  has_one :feed, as: :item
+  has_one :feed, as: :item, dependent: :destroy
   accepts_nested_attributes_for :images, :reject_if => proc {|x| x['image'].blank? }, :allow_destroy => true
     
   scope :published, -> () { where(published: true).order('published_at DESC') }

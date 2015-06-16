@@ -44,6 +44,17 @@ body { height: 100%; margin: 0; padding: 0; font-family: Helvetica, Arial, sans-
  display: none;
 }
 
+nav.pagination {
+  span {
+    a {
+      font-size: 0.8rem;
+      
+    }
+    &.current {
+      font-size: 0.9rem;
+    }
+  }
+}
 
 
 #map_canvas {
