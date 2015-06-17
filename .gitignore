@@ -53,3 +53,4 @@ config/deploy/*
 Capfile
 config/deploy.rb
 .DS_Store
+
