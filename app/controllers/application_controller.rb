@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
   end
   
   def home
-    @feed = Feed.page(params[:page]).per(3)
+    #@feed = Feed.page(params[:page]).per(3)
   end
   
   def static
